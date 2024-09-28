@@ -1,46 +1,44 @@
 @extends('master.master')
 @section('content')
-<div class="container-fluid">
-    <div class="col-12 position-relative overflow-hidden">
+<div class="container-fluid px-0">
+    <div class="position-relative overflow-hidden px-3">
         <img src="{{ asset('assets/hero.png') }}" alt="Hero" class="img-fluid w-100">
-        <div class="position-absolute top-50 start-0 translate-middle-y ps-5">
-            <h1>Reading Today for a <br>Smarter Tomorrow!</h1>
-            <button class="btn btn-warning text-black">Read Now</button>
+        <div class="position-absolute top-50 start-0 translate-middle-y px-4 p-2 p-sm-3 p-md-5 pe-4 pe-sm-0">
+            <h1 class="fs-1 fs-sm-3 fs-md-3 fs-lg-1 fw-bold lh-1 me-4 me-sm-0">
+                Reading Today for a <br class="d-none d-sm-inline">Smarter Tomorrow!
+            </h1>
+            <button class="btn btn-warning text-black mt-2 mt-sm-3 btn-sm">Read Now</button>
         </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row mt-3 mt-md-4 px-2 px-md-3">
         <div class="col-12">
-            <div class="btn-group">
-                <button class="btn btn-outline-warning text-black">Educational</button>
-                <button class="btn btn-outline-warning text-black">Novel</button>
-                <button class="btn btn-outline-warning text-black">Comic</button>
-                <button class="btn btn-outline-warning text-black">Inspirational</button>
-                <button class="btn btn-outline-warning text-black">Kid</button>
-                <button class="btn btn-outline-warning text-black">All Filters</button>
+            <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
+                <button class="btn btn-sm btn-outline-warning text-black">Educational</button>
+                <button class="btn btn-sm btn-outline-warning text-black">Novel</button>
+                <button class="btn btn-sm btn-outline-warning text-black">Comic</button>
+                <button class="btn btn-sm btn-outline-warning text-black">Inspirational</button>
+                <button class="btn btn-sm btn-outline-warning text-black">Kid</button>
+                <button class="btn btn-sm btn-outline-warning text-black">All Filters</button>
             </div>
         </div>
     </div>
 
-    <div class="grid-container mt-5" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-        <?php for($i = 0; $i < 17; $i++): ?>
-        <div class="card h-100" style="max-width: 100%; margin: 0;">
-            <img src="{{ asset('assets/calculus.jpg') }}" class="card-img-top" alt="Calculus" style="height: 70%; object-fit: cover;">
-            <div class="card-body p-2">
-                <h5 class="card-title" style="font-size: 1.2rem;">Calculus</h5>
-                <p class="card-text" style="font-size: 0.9rem;">Rp25.000</p>
-                <div class="d-grid">
-                    <button class="btn btn-warning text-black btn-sm">Add to Cart</button>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2 g-md-3 mt-3 mt-md-4 px-2 px-md-3">
+        @for($i = 0; $i < 17; $i++)
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{ asset('assets/calculus.jpg') }}" class="card-img-top" alt="Calculus" style="height: 150px; object-fit: cover;">
+                <div class="card-body p-2">
+                    <h5 class="card-title fs-6">Calculus</h5>
+                    <p class="card-text small">Rp25.000</p>
+                    <div class="d-grid">
+                        <button class="btn btn-warning text-black btn-sm">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <?php endfor; ?>
+        @endfor
     </div>
-
-
-
-    </div>
-
-
 </div>
 @endsection
