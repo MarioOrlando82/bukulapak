@@ -28,7 +28,7 @@
         @for($i = 0; $i < 17; $i++)
         <div class="col">
             <div class="card h-100">
-                <img src="{{ asset('assets/calculus.jpg') }}" class="card-img-top" alt="Calculus" style="height: 150px; object-fit: cover;">
+                <img src="{{ asset('assets/calculus.jpg') }}" class="card-img-top" alt="Calculus" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="card-body p-2">
                     <h5 class="card-title fs-6">Calculus</h5>
                     <p class="card-text small">Rp25.000</p>
@@ -40,5 +40,6 @@
         </div>
         @endfor
     </div>
+
 </div>
 @endsection
