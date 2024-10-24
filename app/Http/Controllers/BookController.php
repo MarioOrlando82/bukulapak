@@ -19,6 +19,12 @@ class BookController extends Controller
         return view('book/book-add');
     }
 
+    public function detail($id){
+
+        $book = Book::findOrFail($id);
+        return view('book/book-detail', ['bookDetail'=>$book]);
+    }
+
     public function store(Request $request){
         $validated = $request->validate([
             'title' => 'max:50|required',
@@ -45,9 +51,27 @@ class BookController extends Controller
 
     public function update(Request $request, $id){
 
-        $book = Book::findOrFail($id);
+        $updateBook = Book::findOrFail($id);
 
-        $book->update($request->all());
+        $updateBook->update($request->all());
+
+        if($updateBook){
+            Session::flash('status', 'done');
+            Session::flash('message', 'Book is updated');
+        }
+
         return redirect('/bookList');
     }
+
+    public function delete($id){
+        $deletedBook = Book::findOrFail($id);
+        $deletedBook->delete();
+
+        if($deletedBook){
+            Session::flash('status', 'done');
+            Session::flash('message', 'Book is gone');
+        }
+
+        return redirect('/bookList');
+    }    
 }

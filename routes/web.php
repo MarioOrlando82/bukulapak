@@ -8,8 +8,12 @@ Route::get('/', function () {
 });
 
 Route::get('/bookList', [BookController::class, 'index']);
+Route::get('/book-detail/{id}', [BookController::class, 'detail']);
+
 Route::get('/book-add', [BookController::class, 'create']); //ke add book page
 Route::post('/addBook',[BookController::class, 'store']); //add ke db
 
 Route::get('/book-update/{id}',[BookController::class, 'edit']); //ke edit book page
 Route::put('/updateBook/{id}', [BookController::class, 'update']); //upd ke db
+
+Route::get('/book-delete/{id}', [BookController::class, 'delete']); //delete dari db

@@ -1,3 +1,9 @@
+@extends('layouts/admin-layout')
+
+@section('title', 'Books')
+
+@section('content')
+
 <div>
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -37,3 +43,5 @@
         </div>
     </form>
 </div>
+
+@endsection
