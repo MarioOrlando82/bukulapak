@@ -36,5 +36,12 @@ class DatabaseSeeder extends Seeder
                 'book_id' => $books->random()->id,
             ]);
         });
+
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin'),
+            'role' => 'admin',
+        ]);
     }
 }
