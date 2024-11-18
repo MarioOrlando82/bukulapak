@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function myBooks()
+    {
+        return $this->belongsToMany(Book::class, 'my_books');
+    }
 }
