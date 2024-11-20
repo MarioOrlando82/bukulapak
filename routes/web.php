@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Middleware\IsUser;
@@ -28,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/transactions/create/{book}', [TransactionController::class, 'create'])->name('transactions.create');
     Route::post('/transactions/success/{transaction}', [TransactionController::class, 'success'])->name('transactions.success');
     Route::get('/my-books', [TransactionController::class, 'myBooks'])->name('my-books.index');
+    Route::post('books/{book}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+    Route::get('reviews/{review}/edit', [ReviewController::class, 'edit'])->name('reviews.edit');
+    Route::put('reviews/{review}', [ReviewController::class, 'update'])->name('reviews.update');
+    Route::delete('reviews/{review}', [ReviewController::class, 'destroy'])->name('reviews.destroy');
 });
 
 // Admin Routes

@@ -3,62 +3,69 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use App\Models\Book;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    // Store a new review
+    public function store(Request $request, Book $book)
     {
-        //
+        $request->validate([
+            'content' => 'required|max:500',
+            'rating' => 'required|integer|min:1|max:5',
+        ]);
+
+        // Create the review
+        $book->reviews()->create([
+            'user_id' => Auth::id(),
+            'content' => $request->content,
+            'rating' => $request->rating,
+        ]);
+
+        return redirect()->route('book.show', $book)->with('success', 'Review added successfully!');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store()
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Review $review)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+    // Show the form to edit a review
     public function edit(Review $review)
     {
-        //
+        if (Auth::user()->id !== $review->user_id) {
+            return redirect()->route('books.show', $review->book_id)->with('error', 'You are not authorized to edit this review.');
+        }
+
+        return view('reviews.edit', compact('review'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update()
+    // Update a review
+    public function update(Request $request, Review $review)
     {
-        //
+        if (Auth::user()->id !== $review->user_id) {
+            return redirect()->route('books.show', $review->book_id)->with('error', 'You are not authorized to update this review.');
+        }
+
+        $request->validate([
+            'content' => 'required|max:500',
+            'rating' => 'required|integer|min:1|max:5',
+        ]);
+
+        $review->update([
+            'content' => $request->content,
+            'rating' => $request->rating,
+        ]);
+
+        return redirect()->route('books.show', $review->book_id)->with('success', 'Review updated successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    // Delete a review
     public function destroy(Review $review)
     {
-        //
+        if (Auth::user()->id !== $review->user_id) {
+            return redirect()->route('books.show', $review->book_id)->with('error', 'You are not authorized to delete this review.');
+        }
+
+        $review->delete();
+
+        return redirect()->route('books.show', $review->book_id)->with('success', 'Review deleted successfully!');
     }
 }

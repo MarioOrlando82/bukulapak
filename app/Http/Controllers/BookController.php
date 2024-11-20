@@ -88,4 +88,5 @@ $pdfFilePath = $request->file('pdf_file')->store('pdfs', 'public');  // Save to 
         $book->delete();
         return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
     }
+    
 }
