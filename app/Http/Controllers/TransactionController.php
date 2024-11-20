@@ -14,12 +14,11 @@ class TransactionController extends Controller
     {
         $book = Book::findOrFail($bookId);
 
-        // Create a transaction for the authenticated user
         $transaction = Transaction::create([
             'user_id' => Auth::id(),
             'book_id' => $book->id,
             'amount' => $book->price,
-            'payment_status' => 'pending'
+            'payment_status' => 'pending',
         ]);
 
         return view('transactions.create', compact('transaction', 'book'));
@@ -30,10 +29,8 @@ class TransactionController extends Controller
         $transaction = Transaction::findOrFail($transactionId);
 
         if ($transaction->payment_status !== 'completed') {
-            // Mark payment as successful
             $transaction->update(['payment_status' => 'completed']);
 
-            // Add the book to the user's library (my_books)
             MyBook::create([
                 'user_id' => $transaction->user_id,
                 'book_id' => $transaction->book_id,
@@ -48,5 +45,4 @@ class TransactionController extends Controller
         $myBooks = MyBook::where('user_id', Auth::id())->with('book')->get();
         return view('my-books.index', compact('myBooks'));
     }
-
 }

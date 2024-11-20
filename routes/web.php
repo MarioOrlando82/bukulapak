@@ -7,7 +7,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Middleware\IsAdmin;
-use App\Http\Middleware\IsUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('books.index');
@@ -17,11 +16,6 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
-
-// Guest Routes
-Route::middleware('guest')->group(function () {
-
-});
 
 // Authenticated Routes
 Route::middleware('auth')->group(function () {
@@ -42,9 +36,4 @@ Route::middleware(['auth', IsAdmin::class])->group(function () {
     })->name('admin.panel');
     Route::resource('/admin/categories', CategoryController::class);
     Route::resource('/admin/books', BookController::class);
-});
-
-// User Routes
-Route::middleware(['auth', IsUser::class])->group(function () {
-
 });

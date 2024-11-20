@@ -35,7 +35,7 @@
 
         <div class="col-4 d-flex justify-content-end">
             @auth
-                @if(Auth::user()->role === 'admin')
+                @if (Auth::user()->role === 'admin')
                     <a href="{{ route('admin.panel') }}" class="btn btn-outline-warning btn-sm me-1 me-sm-2 text-nowrap">
                         Admin Panel
                     </a>
