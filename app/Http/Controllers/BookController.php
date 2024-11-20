@@ -3,62 +3,79 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-
+use App\Models\Category;
+use Illuminate\Http\Request;
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $books = Book::with('category')->get();
+        return view('admin.books.index', compact('books'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.books.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'title' => 'required|max:255',
+            'author' => 'required|max:255',
+            'description' => 'required',
+            'cover_image' => 'required|image',
+            'pdf_file' => 'required|file|mimes:pdf',
+            'price' => 'required|numeric',
+        ]);
+
+        $coverImagePath = $request->file('cover_image')->store('cover_images');
+        $pdfFilePath = $request->file('pdf_file')->store('pdfs');
+
+        Book::create(array_merge($request->all(), [
+            'cover_image' => $coverImagePath,
+            'pdf_file' => $pdfFilePath,
+        ]));
+
+        return redirect()->route('books.index')->with('success', 'Book created successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Book $book)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Book $book)
     {
-        //
+        $categories = Category::all();
+        return view('admin.books.edit', compact('book', 'categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update()
+    public function update(Request $request, Book $book)
     {
-        //
+        $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'title' => 'required|max:255',
+            'author' => 'required|max:255',
+            'description' => 'required',
+            'price' => 'required|numeric',
+        ]);
+
+        if ($request->hasFile('cover_image')) {
+            $coverImagePath = $request->file('cover_image')->store('cover_images');
+            $book->cover_image = $coverImagePath;
+        }
+
+        if ($request->hasFile('pdf_file')) {
+            $pdfFilePath = $request->file('pdf_file')->store('pdfs');
+            $book->pdf_file = $pdfFilePath;
+        }
+
+        $book->update($request->all());
+
+        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
     }
 }

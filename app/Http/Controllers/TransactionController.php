@@ -2,63 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Transaction;
+use App\Models\MyBook;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function create($bookId)
     {
-        //
+        $book = Book::findOrFail($bookId);
+
+        // Create a transaction for the authenticated user
+        $transaction = Transaction::create([
+            'user_id' => Auth::id(),
+            'book_id' => $book->id,
+            'amount' => $book->price,
+            'payment_status' => 'pending'
+        ]);
+
+        return view('transactions.create', compact('transaction', 'book'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function success(Request $request, $transactionId)
     {
-        //
+        $transaction = Transaction::findOrFail($transactionId);
+
+        if ($transaction->payment_status !== 'completed') {
+            // Mark payment as successful
+            $transaction->update(['payment_status' => 'completed']);
+
+            // Add the book to the user's library (my_books)
+            MyBook::create([
+                'user_id' => $transaction->user_id,
+                'book_id' => $transaction->book_id,
+            ]);
+        }
+
+        return redirect()->route('my-books.index')->with('success', 'Book added to your library!');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store()
+    public function myBooks()
     {
-        //
+        $myBooks = MyBook::where('user_id', Auth::id())->with('book')->get();
+        return view('my-books.index', compact('myBooks'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Transaction $transaction)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update()
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Transaction $transaction)
-    {
-        //
-    }
 }

@@ -38,11 +38,6 @@ class User extends Authenticatable
         ];
     }
 
-    public function myBooks()
-    {
-        return $this->belongsToMany(Book::class, 'my_books');
-    }
-
     public function isAdmin()
     {
         return $this->role === 'admin';
@@ -51,5 +46,10 @@ class User extends Authenticatable
     public function isUser()
     {
         return $this->role === 'user';
+    }
+
+    public function myBooks()
+    {
+        return $this->hasMany(MyBook::class);
     }
 }
