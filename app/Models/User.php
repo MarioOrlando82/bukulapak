@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(MyBook::class);
     }
+
+    public function books()
+    {
+        return $this->belongsToMany(Book::class, 'my_books');
+    }
 }

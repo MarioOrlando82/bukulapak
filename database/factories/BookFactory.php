@@ -20,11 +20,11 @@ class BookFactory extends Factory
         return [
             'title' => $this->faker->sentence(3),
             'author' => $this->faker->name(),
-            'category_id' => Category::factory(),
-            'description' => $this->faker->paragraph(),
-            'cover_image' => 'covers/' . $this->faker->image('public/storage/covers', 400, 300, null, false),
-            'pdf_file' => 'pdfs/' . $this->faker->uuid() . '.pdf',
-            'price' => $this->faker->randomFloat(2, 10, 100),
+            'category_id' => Category::all()->random()->id,
+            'description' => $this->faker->paragraph(2),
+            'cover_image' => 'cover_images/suntzu.jpg',
+            'pdf_file' => 'pdfs/suntzu.pdf',
+            'price' => $this->faker->randomFloat(null, 20000, 500000),
         ];
     }
 }

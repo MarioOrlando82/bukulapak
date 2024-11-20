@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
@@ -29,7 +28,6 @@ return [
     */
 
     'disks' => [
-
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
@@ -39,10 +37,16 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
-            'visibility' => 'public',
-            'throw' => false,
+            'root' => storage_path('app/public'), // This ensures files are stored in the `public` folder.
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public', // Makes sure files are publicly accessible.
+        ],
+
+        // Private disk for non-public files
+        'private' => [
+            'driver' => 'local',
+            'root' => storage_path('app/private'), // Files stored here won't be publicly accessible.
+            'visibility' => 'private',
         ],
 
         's3' => [
@@ -56,7 +60,6 @@ return [
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
             'throw' => false,
         ],
-
     ],
 
     /*
@@ -73,5 +76,4 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
-
 ];

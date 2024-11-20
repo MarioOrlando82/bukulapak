@@ -21,25 +21,35 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
+        // Validate the request
         $request->validate([
-            'category_id' => 'required|exists:categories,id',
-            'title' => 'required|max:255',
-            'author' => 'required|max:255',
+            'title' => 'required',
+            'author' => 'required',
             'description' => 'required',
-            'cover_image' => 'required|image',
-            'pdf_file' => 'required|file|mimes:pdf',
             'price' => 'required|numeric',
+            'cover_image' => 'required|image|mimes:jpg,png,jpeg,gif',
+            'pdf_file' => 'required|mimes:pdf|max:10240', // Ensure PDF file validation
         ]);
 
-        $coverImagePath = $request->file('cover_image')->store('cover_images');
-        $pdfFilePath = $request->file('pdf_file')->store('pdfs');
+// Handle cover image upload
+$coverImagePath = $request->file('cover_image')->store('cover_images', 'public');  // Save to `storage/app/public/cover_images`
 
-        Book::create(array_merge($request->all(), [
-            'cover_image' => $coverImagePath,
-            'pdf_file' => $pdfFilePath,
-        ]));
+// Handle PDF file upload
+$pdfFilePath = $request->file('pdf_file')->store('pdfs', 'public');  // Save to `storage/app/public/pdfs`
 
-        return redirect()->route('books.index')->with('success', 'Book created successfully.');
+
+        // Store the book details
+        $book = new Book();
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->description = $request->description;
+        $book->price = $request->price;
+        $book->cover_image = $coverImagePath;
+        $book->pdf_file = $pdfFilePath; // Store the PDF path
+        $book->category_id = $request->category_id;
+        $book->save();
+
+        return redirect()->route('books.index')->with('success', 'Book created successfully!');
     }
 
     public function edit(Book $book)
