@@ -7,15 +7,17 @@
                     <h3 class="m-0">Login</h3>
                 </div>
                 <div class="card-body bg-light">
-                    <form method="POST" action="{{ url('/login') }}">
+                    <form id="loginForm" method="POST" action="{{ url('/login') }}">
                         @csrf
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email">
+                            <div class="invalid-feedback">Please enter a valid email.</div>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control" id="password" name="password">
+                            <div class="invalid-feedback">Password is required.</div>
                         </div>
                         <button type="submit" class="btn btn-warning w-100 text-white mb-3">Login</button>
                         <div class="text-center">
@@ -28,4 +30,32 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+
+            let isValid = true;
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value.trim())) {
+                email.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                email.classList.remove('is-invalid');
+            }
+
+            if (!password.value.trim()) {
+                password.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                password.classList.remove('is-invalid');
+            }
+
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+    </script>
 @endsection
