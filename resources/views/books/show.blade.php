@@ -17,14 +17,7 @@
                 <a href="{{ route('books.index') }}" class="btn btn-secondary">Back to Books</a>
             </div>
         </div>
-
-        @if (session('error'))
-            <div class="alert alert-danger mt-3">{{ session('error') }}</div>
-        @endif
-        @if (session('success'))
-            <div class="alert alert-success mt-3">{{ session('success') }}</div>
-        @endif
-
+        
         <div class="reviews mt-4">
             <h3>Reviews</h3>
 
@@ -35,7 +28,6 @@
 
                     @auth
                         @if (Auth::user()->id === $review->user_id)
-                            <!-- Edit and Delete Review -->
                             <a href="{{ route('reviews.edit', $review->id) }}" class="btn btn-warning btn-sm">Edit</a>
                             <form action="{{ route('reviews.destroy', $review->id) }}" method="POST" style="display:inline;">
                                 @csrf

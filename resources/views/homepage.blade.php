@@ -1,4 +1,5 @@
 @extends('master.master')
+
 @section('content')
     <div class="container-fluid px-0">
         <div class="position-relative overflow-hidden px-3">
@@ -14,12 +15,31 @@
         <div class="row mt-3 mt-md-4 px-2 px-md-3">
             <div class="col-12">
                 <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
-                    <button class="btn btn-sm btn-outline-warning text-black">Educational</button>
-                    <button class="btn btn-sm btn-outline-warning text-black">Novel</button>
-                    <button class="btn btn-sm btn-outline-warning text-black">Comic</button>
-                    <button class="btn btn-sm btn-outline-warning text-black">Inspirational</button>
-                    <button class="btn btn-sm btn-outline-warning text-black">Kid</button>
-                    <button class="btn btn-sm btn-outline-warning text-black">All Filters</button>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-warning text-black dropdown-toggle" type="button" id="categoryFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Filter by Category
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="categoryFilterDropdown">
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['category' => 'all']) }}">All Categories</a></li>
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['category' => 'Educational']) }}">Educational</a></li>
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['category' => 'Novel']) }}">Novel</a></li>
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['category' => 'Comic']) }}">Comic</a></li>
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['category' => 'Inspirational']) }}">Inspirational</a></li>
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['category' => 'Kid']) }}">Kid</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-warning text-black dropdown-toggle" type="button" id="priceSortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sort by Price
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="priceSortDropdown">
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['sort' => 'price_asc', 'category' => request('category')]) }}">Lowest Price</a></li>
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['sort' => 'price_desc', 'category' => request('category')]) }}">Highest Price</a></li>
+                            <li><a class="dropdown-item" href="{{ route('book.index', ['sort' => null, 'category' => request('category')]) }}">All Prices</a></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -37,12 +57,12 @@
                                 <a href="{{ route('book.show', $book->id) }}"
                                     class="btn btn-warning text-black btn-sm">Detail</a>
                             </div>
-
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+
         {{ $books->links() }}
     </div>
 @endsection

@@ -9,7 +9,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('books.index');
+Route::get('/', [HomeController::class, 'index'])->name('book.index');
 Route::get('/books/{id}', [HomeController::class, 'show'])->name('book.show');
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

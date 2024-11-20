@@ -27,10 +27,10 @@
         </div>
 
         <div class="col-5">
-            <div class="input-group input-group-sm">
-                <input type="text" class="form-control border border-warning" placeholder="Search Book">
-                <button class="btn btn-outline-warning" type="button">Search</button>
-            </div>
+            <form method="GET" action="{{ route('book.index') }}" class="input-group input-group-sm">
+                <input type="text" class="form-control border border-warning" placeholder="Search Book" name="search" value="{{ request('search') }}">
+                <button class="btn btn-outline-warning" type="submit">Search</button>
+            </form>
         </div>
 
         <div class="col-4 d-flex justify-content-end">
