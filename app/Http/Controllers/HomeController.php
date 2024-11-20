@@ -11,6 +11,7 @@ class HomeController extends Controller
     {
         $category = $request->get('category');
         $sort = $request->get('sort');
+        $search = $request->get('search');
 
         $query = Book::query();
 
@@ -26,10 +27,15 @@ class HomeController extends Controller
             $query->orderBy('price', 'desc');
         }
 
+        if ($search) {
+            $query->where('title', 'like', '%' . $search . '%');
+        }
+
         $books = $query->paginate(12);
 
         return view('homepage', compact('books'));
     }
+
 
 
 
