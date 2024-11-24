@@ -28,6 +28,7 @@
     @yield('content')
     @include('components.footer')
     <script src="{{asset('bootstrap/js/bootstrap.bundle.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>

@@ -24,7 +24,7 @@ class BookFactory extends Factory
             'description' => $this->faker->paragraph(2),
             'cover_image' => 'cover_images/suntzu.jpg',
             'pdf_file' => 'pdfs/suntzu.pdf',
-            'price' => $this->faker->randomFloat(null, 20000, 500000),
+            'price' => $this->faker->numberBetween(20000, 500000),
         ];
     }
 }

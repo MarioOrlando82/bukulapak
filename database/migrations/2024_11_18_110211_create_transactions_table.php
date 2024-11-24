@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('book_id')->constrained()->onDelete('cascade');
-            $table->decimal('amount', 8, 2);
+            $table->integer('amount');
             $table->string('payment_status')->default('pending');
+            $table->string('snap_token')->nullable();
             $table->timestamps();
         });
     }

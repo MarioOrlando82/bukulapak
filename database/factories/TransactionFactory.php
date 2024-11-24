@@ -21,7 +21,7 @@ class TransactionFactory extends Factory
         return [
             'user_id' => User::factory(),
             'book_id' => Book::factory(),
-            'amount' => $this->faker->randomFloat(null, 20000, 500000),
+            'amount' => $this->faker->numberBetween(20000, 500000),
             'payment_status' => $this->faker->randomElement(['pending', 'completed', 'failed']),
         ];
     }
