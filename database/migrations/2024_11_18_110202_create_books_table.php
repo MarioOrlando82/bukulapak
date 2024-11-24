@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('cover_image');
             $table->string('pdf_file');
-            $table->decimal('price', 8, 2);
+            $table->integer('price');
             $table->timestamps();
         });
     }

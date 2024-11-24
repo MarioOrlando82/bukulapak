@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Transaction;
 use App\Models\MyBook;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TransactionController extends Controller
@@ -21,10 +20,29 @@ class TransactionController extends Controller
             'payment_status' => 'pending',
         ]);
 
+        \Midtrans\Config::$serverKey = config('midtrans.serverKey');
+        \Midtrans\Config::$isProduction = false;
+        \Midtrans\Config::$isSanitized = true;
+        \Midtrans\Config::$is3ds = true;
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => $book->price,
+            ),
+            'customer_details' => array(
+                'first_name' => Auth::user()->name,
+                'email' =>  Auth::user()->email,
+            ),
+        );
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+        $transaction->snap_token = $snapToken;
+        $transaction->save();
+
         return view('transactions.create', compact('transaction', 'book'));
     }
 
-    public function success(Request $request, $transactionId)
+    public function success($transactionId)
     {
         $transaction = Transaction::findOrFail($transactionId);
 
