@@ -14,10 +14,10 @@
                 <p>{{ $book->description }}</p>
                 <p><strong>Price:</strong> Rp{{ number_format($book->price, 0, ',', '.') }}</p>
                 <a href="{{ route('transactions.create', $book->id) }}" class="btn btn-warning text-black">Buy Now</a>
-                <a href="{{ route('books.index') }}" class="btn btn-secondary">Back to Books</a>
+                <a href="{{ route('book.index') }}" class="btn btn-secondary">Back to Books</a>
             </div>
         </div>
-        
+
         <div class="reviews mt-4">
             <h3>Reviews</h3>
 
