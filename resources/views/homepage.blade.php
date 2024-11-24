@@ -45,22 +45,28 @@
         </div>
 
         <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2 g-md-3 mt-3 mt-md-4 px-2 px-md-3">
-            @foreach ($books as $book)
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="{{ asset('storage/' . $book->cover_image) }}" class="card-img-top"
-                            alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
-                        <div class="card-body p-2">
-                            <h5 class="card-title fs-6">{{ $book->title }}</h5>
-                            <p class="card-text small">Rp{{ number_format($book->price, 0, ',', '.') }}</p>
-                            <div class="d-grid">
-                                <a href="{{ route('book.show', $book->id) }}"
-                                    class="btn btn-warning text-black btn-sm">Detail</a>
+            @if ($books->isEmpty())
+                <div class="col-12 text-center">
+                    <p>No books found</p>
+                </div>
+            @else
+                @foreach ($books as $book)
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="{{ asset('storage/' . $book->cover_image) }}" class="card-img-top"
+                                alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="card-body p-2">
+                                <h5 class="card-title fs-6">{{ $book->title }}</h5>
+                                <p class="card-text small">Rp{{ number_format($book->price, 0, ',', '.') }}</p>
+                                <div class="d-grid">
+                                    <a href="{{ route('book.show', $book->id) }}"
+                                        class="btn btn-warning text-black btn-sm">Detail</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            @endif
         </div>
 
         {{ $books->links() }}
