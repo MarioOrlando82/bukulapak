@@ -53,7 +53,7 @@
                 @foreach ($books as $book)
                     <div class="col">
                         <div class="card h-100">
-                            <img src="{{ asset('storage/' . $book->cover_image) }}" class="card-img-top"
+                            <img src="data:image/jpeg;base64,{{ $book->cover_image }}" class="card-img-top"
                                 alt="{{ $book->title }}" style="width: 100%; height: 100%; object-fit: cover;">
                             <div class="card-body p-2">
                                 <h5 class="card-title fs-6">{{ $book->title }}</h5>

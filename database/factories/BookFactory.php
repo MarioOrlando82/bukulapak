@@ -22,8 +22,8 @@ class BookFactory extends Factory
             'author' => $this->faker->name(),
             'category_id' => Category::all()->random()->id,
             'description' => $this->faker->paragraph(2),
-            'cover_image' => 'cover_images/suntzu.jpg',
-            'pdf_file' => 'pdfs/suntzu.pdf',
+            'cover_image' => base64_encode(file_get_contents(public_path('storage/cover_images/suntzu.jpg'))),
+            'pdf_file' => base64_encode(file_get_contents(public_path('storage/pdfs/suntzu.pdf'))),
             'price' => $this->faker->numberBetween(20000, 500000),
         ];
     }

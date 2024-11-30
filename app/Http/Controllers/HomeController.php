@@ -31,7 +31,7 @@ class HomeController extends Controller
             $query->where('title', 'like', '%' . $search . '%');
         }
 
-        $books = $query->paginate(12);
+        $books = $query->paginate(10);
 
         return view('homepage', compact('books'));
     }

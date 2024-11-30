@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('author');
             $table->text('description');
-            $table->string('cover_image');
-            $table->string('pdf_file');
+            $table->longText('cover_image');
+            $table->longText('pdf_file');
             $table->integer('price');
             $table->timestamps();
         });

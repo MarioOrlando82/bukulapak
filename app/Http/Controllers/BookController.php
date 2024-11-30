@@ -30,16 +30,16 @@ class BookController extends Controller
             'pdf_file' => 'required|mimes:pdf|max:10240',
         ]);
 
-        $coverImagePath = $request->file('cover_image')->store('cover_images', 'public');
-        $pdfFilePath = $request->file('pdf_file')->store('pdfs', 'public');
+        $coverImageData = base64_encode(file_get_contents($request->file('cover_image')));
+        $pdfFileData = base64_encode(file_get_contents($request->file('pdf_file')));
 
         $book = new Book();
         $book->title = $request->title;
         $book->author = $request->author;
         $book->description = $request->description;
         $book->price = $request->price;
-        $book->cover_image = $coverImagePath;
-        $book->pdf_file = $pdfFilePath;
+        $book->cover_image = $coverImageData;
+        $book->pdf_file = $pdfFileData;
         $book->category_id = $request->category_id;
         $book->save();
 
@@ -63,13 +63,13 @@ class BookController extends Controller
         ]);
 
         if ($request->hasFile('cover_image')) {
-            $coverImagePath = $request->file('cover_image')->store('cover_images');
-            $book->cover_image = $coverImagePath;
+            $coverImageData = base64_encode(file_get_contents($request->file('cover_image')));
+            $book->cover_image = $coverImageData;
         }
 
         if ($request->hasFile('pdf_file')) {
-            $pdfFilePath = $request->file('pdf_file')->store('pdfs');
-            $book->pdf_file = $pdfFilePath;
+            $pdfFileData = base64_encode(file_get_contents($request->file('pdf_file')));
+            $book->pdf_file = $pdfFileData;
         }
 
         $book->update($request->all());

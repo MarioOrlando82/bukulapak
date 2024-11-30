@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ asset('storage/' . $book->cover_image) }}" class="img-fluid" alt="{{ $book->title }}">
+                <img src="data:image/jpeg;base64,{{ $book->cover_image }}" class="img-fluid" alt="{{ $book->title }}">
             </div>
             <div class="col-md-8">
                 <h2>{{ $book->title }}</h2>
