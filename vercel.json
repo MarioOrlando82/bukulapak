@@ -8,15 +8,15 @@
     "routes": [
         {
             "src": "/assets/(.*)",
-            "dest": "/assets/$1"
+            "dest": "public/assets/"
         },
         {
             "src": "/storage/cover_images/(.*)",
-            "dest": "/storage/cover_images/$1"
+            "dest": "public/storage/cover_images/"
         },
         {
             "src": "/storage/pdfs/(.*)",
-            "dest": "/storage/pdfs/$1"
+            "dest": "public/storage/pdfs/"
         },
         {
             "src": "/(.*)",
