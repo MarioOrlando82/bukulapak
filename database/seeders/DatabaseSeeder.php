@@ -34,12 +34,12 @@ class DatabaseSeeder extends Seeder
 
         $categories = Category::all();
 
-        Book::factory(15)->create()->each(function ($book) use ($categories) {
+        Book::factory(11)->create()->each(function ($book) use ($categories) {
             $book->category_id = $categories->random()->id;
             $book->save();
         });
 
-        User::factory(3)->create()->each(function ($user) {
+        User::factory(1)->create()->each(function ($user) {
             $user->books()->attach(Book::all()->random(3));
 
             Review::factory(5)->create([
