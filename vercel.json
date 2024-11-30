@@ -7,8 +7,16 @@
     },
     "routes": [
         {
-            "src": "/img/(.*)",
-            "dest": "/public/img/"
+            "src": "/assets/(.*)",
+            "dest": "/public/assets/"
+        },
+        {
+            "src": "/storage/cover_images/(.*)",
+            "dest": "/public/storage/cover_images/"
+        },
+        {
+            "src": "/storage/pdfs/(.*)",
+            "dest": "/public/storage/pdfs/"
         },
         {
             "src": "/(.*)",
