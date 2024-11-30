@@ -8,19 +8,15 @@
     "routes": [
         {
             "src": "/assets/(.*)",
-            "dest": "public/assets/"
+            "dest": "/assets/$1"
         },
         {
             "src": "/storage/cover_images/(.*)",
-            "dest": "public/storage/cover_images/"
+            "dest": "/storage/cover_images/$1"
         },
         {
             "src": "/storage/pdfs/(.*)",
-            "dest": "public/storage/pdfs/"
-        },
-        {
-            "src": "/storage/pdfs/(.*)",
-            "dest": "public/storage/pdfs/"
+            "dest": "/storage/pdfs/$1"
         },
         {
             "src": "/(.*)",
@@ -30,7 +26,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://bukulapak.vercel.app/",
+        "APP_URL": "https://bukulapak.vercel.app",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
