@@ -8,19 +8,19 @@
     "routes": [
         {
             "src": "/assets/(.*)",
-            "dest": "/public/assets/"
+            "dest": "public/assets/"
         },
         {
             "src": "/storage/cover_images/(.*)",
-            "dest": "/public/storage/cover_images/"
+            "dest": "public/storage/cover_images/"
         },
         {
             "src": "/storage/pdfs/(.*)",
-            "dest": "/public/storage/pdfs/"
+            "dest": "public/storage/pdfs/"
         },
         {
             "src": "/storage/pdfs/(.*)",
-            "dest": "/public/storage/pdfs/"
+            "dest": "public/storage/pdfs/"
         },
         {
             "src": "/(.*)",
