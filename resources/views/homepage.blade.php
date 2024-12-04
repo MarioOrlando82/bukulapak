@@ -78,21 +78,23 @@
 
         <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2 g-md-3 mt-3 mt-md-4 px-2 px-md-3">
             @if ($books->isEmpty())
-                <div class="col-12 text-center">
-                    <p class="fw-semibold">No books found</p>
+                <div class="d-flex flex-column align-items-center justify-content-center text-center" style="width: 100%; ">
+                    <img src="{{ asset('assets/search_not_found.png') }}" class="img-fluid mb-2"
+                        alt="No Matching Books Found" style="max-width: 400px; height: auto;">
+                    <h3>No Matching Books Found</h3>
+                    <p class="text-muted mb-5">Try searching with different keywords</p>
                 </div>
             @else
                 @foreach ($books as $book)
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-flip">
-                                <!-- Front (Image) -->
+                                <!-- Front -->
                                 <div class="card-front">
-                                    <img src="data:image/jpeg;base64,{{ $book->cover_image }}" 
-                                        class="card-img-top"
+                                    <img src="data:image/jpeg;base64,{{ $book->cover_image }}" class="card-img-top"
                                         alt="{{ $book->title }}">
                                 </div>
-                                <!-- Back (Description) -->
+                                <!-- Back -->
                                 <div class="card-back d-flex align-items-center justify-content-center">
                                     <p class="text-center px-2 fw-semibold">{{ $book->description }}</p>
                                 </div>
@@ -100,11 +102,12 @@
                             <div class="card-body d-flex flex-column justify-content-between p-2">
                                 <div class="title-price-container" style="min-height: 60px;">
                                     <h6 class="card-title fs-6 fw-bold text-truncate">{{ $book->title }}</h6>
-                                    <p class="card-text small fw-semibold mb-0">Rp{{ number_format($book->price, 0, ',', '.') }}</p>
+                                    <p class="card-text small fw-semibold mb-0">
+                                        Rp{{ number_format($book->price, 0, ',', '.') }}</p>
                                 </div>
                                 <div class="d-grid mt-3">
-                                    <a href="{{ route('book.show', $book->id) }}" 
-                                       class="btn btn-warning text-black btn-sm fw-semibold">Detail</a>
+                                    <a href="{{ route('book.show', $book->id) }}"
+                                        class="btn btn-warning text-black btn-sm fw-semibold">Detail</a>
                                 </div>
                             </div>
                         </div>
