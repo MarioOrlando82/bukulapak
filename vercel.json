@@ -7,6 +7,14 @@
     },
     "routes": [
         {
+            "src": "/css/(.*)",
+            "dest": "public/css/"
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "public/js/"
+        },
+        {
             "src": "/assets/(.*)",
             "dest": "public/assets/"
         },
