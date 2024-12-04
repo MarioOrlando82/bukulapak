@@ -55,10 +55,9 @@ class ReviewController extends Controller
         ]);
 
         return redirect()
-            ->route('books.show', $review->book_id)
+            ->route('book.show', $review->book_id)
             ->with('success', 'Review updated successfully!');
     }
-
     public function destroy(Review $review)
     {
         if (Auth::user()->id !== $review->user_id) {
@@ -70,7 +69,7 @@ class ReviewController extends Controller
         $review->delete();
 
         return redirect()
-            ->route('books.show', $review->book_id)
+            ->route('book.show', $review->book_id)
             ->with('success', 'Review deleted successfully!');
     }
 }
