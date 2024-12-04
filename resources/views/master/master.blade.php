@@ -26,7 +26,9 @@
     @if (session('success'))
         <div class="alert alert-success mt-3">{{ session('success') }}</div>
     @endif
-    @yield('content')
+    <main class="flex-grow-1 d-flex flex-column">
+        @yield('content')
+    </main>
     @include('components.footer')
     @yield('scripts')
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
