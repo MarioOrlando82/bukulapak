@@ -8,7 +8,7 @@
                 <a href="{{ route('transactions.create', $book->id) }}" class="btn btn-warning text-black mt-4"><span
                         class="fw-semibold">Buy Now for</span>
                     <strong>Rp{{ number_format($book->price, 0, ',', '.') }}</strong></a>
-                <a href="{{ route('book.index') }}" class="btn btn-secondary mt-3">Back to Books</a>
+                <a href="{{ route('book.index') }}" class="btn btn-secondary mt-3 fw-semibold">Back to Books</a>
             </div>
             <div class="col-md-8">
                 <h2>{{ $book->title }}</h2>
@@ -91,7 +91,7 @@
                         <input type="number" name="rating" class="form-control fw-semibold" min="1" max="5"
                             required>
                     </div>
-                    <button type="submit" class="btn btn-warning mt-3 fw-semibold">Submit Review</button>
+                    <button type="submit" class="btn btn-warning mt-3 fw-semibold mb-5">Submit Review</button>
                 </form>
             @endauth
         </div>
