@@ -1,0 +1,126 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.dropdown-menu {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-color: #f3c736;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ffefca;
+    color: #f3c736;
+    border-radius: 15px;
+}
+
+.card-flip {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card-flip:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background: #f3c736;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+.card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    text-decoration: none;
+    color: #6c757d;
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    box-shadow: none;
+}
+
+.pagination .page-link:hover {
+    color: #f3c736;
+}
+
+.pagination .active .page-link {
+    color: #f3c736;
+    pointer-events: none;
+}
+
+.pagination .active .page-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background-color: #f3c736;
+    border-radius: 1px;
+    transition: width 0.3s ease-in-out;
+}
+
+.pagination .bigger-arrow {
+    font-size: 2rem;
+}

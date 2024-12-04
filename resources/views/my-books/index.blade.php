@@ -6,8 +6,11 @@
 
         <div class="row">
             @if ($myBooks->isEmpty())
-                <div class="col-12 text-center">
-                    <p>No books found in your collection.</p>
+                <div class="d-flex flex-column align-items-center justify-content-center text-center" style="width: 100%; ">
+                    <img src="{{ asset('assets/no_file.png') }}" class="img-fluid mb-2" alt="No Matching Books Found"
+                        style="max-width: 400px; height: auto;">
+                    <h3>No Books Found in Your Collection</h3>
+                    <p class="text-muted mb-5">Try adding some books to get started!</p>
                 </div>
             @else
                 @foreach ($myBooks as $myBook)
@@ -17,8 +20,7 @@
                                 alt="{{ $myBook->book->title }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $myBook->book->title }}</h5>
-                                <a href="data:application/pdf;base64,{{ $myBook->book->pdf_file }}"
-                                    download="Book.pdf"
+                                <a href="data:application/pdf;base64,{{ $myBook->book->pdf_file }}" download="Book.pdf"
                                     class="btn btn-warning text-black">
                                     Download PDF
                                 </a>

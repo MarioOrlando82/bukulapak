@@ -1,60 +1,95 @@
 <div class="bg-warning text-white py-2 col-12 ps-3 pe-3">
     <div class="d-flex align-items-center justify-content-between">
-        <div class="dropdown d-inline">
-            <button class="btn btn-outline-secondary dropdown-toggle text-black" type="button" id="languageDropdown"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Language
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                <li><a class="dropdown-item" href="?lang=en">English</a></li>
-                <li><a class="dropdown-item" href="?lang=id">Bahasa Indonesia</a></li>
-            </ul>
-        </div>
-        <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-            @auth
-                <p class="text-black text-center mb-0">Welcome, {{ Auth::user()->name }}!</p>
-            @else
-                <p class="text-black text-center mb-0">Welcome, Guest!</p>
-            @endauth
-        </div>
-    </div>
-</div>
-
-<div class="col-12 ps-3 pe-3">
-    <div class="row align-items-center py-2">
-        <div class="col-3">
-            <a href="/" class="fs-6 fs-sm-5 fs-md-4 m-0 text-decoration-none text-dark">Bukulapak</a>
+        <div class="d-flex align-items-center">
+            <div class="">
+                <a href="/" class="fs-6 m-0 text-decoration-none text-dark">
+                    <img src="{{ asset('assets/bukulapak_home.png') }}" alt="Home" class="w-25">
+                </a>
+            </div>
         </div>
 
-        <div class="col-5">
-            <form method="GET" action="{{ route('book.index') }}" class="input-group input-group-sm">
-                <input type="text" class="form-control border border-warning" placeholder="Search Book" name="search" value="{{ request('search') }}">
-                <button class="btn btn-outline-warning" type="submit">Search</button>
-            </form>
-        </div>
+        <div class="d-flex align-items-center">
+            {{-- select language --}}
+            <div class="dropdown d-inline me-3">
+                <button class="btn dropdown-toggle text-black" type="button" id="languageDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <span id="selectedLanguage" class="fw-semibold">English</span>
+                    <img src="https://flagcdn.com/20x15/gb.png"
+                        srcset="https://flagcdn.com/40x30/gb.png 2x,
+    https://flagcdn.com/60x45/gb.png 3x"
+                        width="20" height="15" alt="United Kingdom">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item" href="?lang=en" data-lang="en">
+                            <span class="fw-semibold">English</span>
+                            <img src="https://flagcdn.com/20x15/gb.png"
+                                srcset="https://flagcdn.com/40x30/gb.png 2x, https://flagcdn.com/60x45/gb.png 3x"
+                                width="20" height="15" alt="United Kingdom">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="?lang=id" data-lang="id">
+                            <span class="fw-semibold">Bahasa Indonesia</span>
+                            <img src="https://flagcdn.com/20x15/id.png"
+                                srcset="https://flagcdn.com/40x30/id.png 2x, https://flagcdn.com/60x45/id.png 3x"
+                                width="20" height="15" alt="Indonesia">
+                        </a>
+                    </li>
+                </ul>
 
-        <div class="col-4 d-flex justify-content-end">
-            @auth
-                @if (Auth::user()->role === 'admin')
-                    <a href="{{ route('admin.panel') }}" class="btn btn-outline-warning btn-sm me-1 me-sm-2 text-nowrap">
-                        Admin Panel
-                    </a>
-                @endif
+            </div>
 
-                <a href="{{ route('my-books.index') }}" class="btn btn-outline-warning btn-sm me-1 me-sm-2 text-nowrap">
-                    My Books
+            {{-- welcome --}}
+            <div class="me-3 text-nowrap">
+                @auth
+                    <p class="text-black text-center mb-0 fw-semibold">Welcome, {{ Auth::user()->name }}!</p>
+                @else
+                    <p class="text-black text-center mb-0 fw-semibold">Welcome, Guest!</p>
+                @endauth
+            </div>
+
+            {{-- profile --}}
+            <div class="dropdown">
+                <a class="d-block position-relative rounded-circle overflow-hidden"
+                    style="width: 40px; height: 40px; cursor: pointer;" id="profileDropdown" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    @auth
+                        @php
+                            $randomNumber = rand(1, 3);
+                        @endphp
+                        <img src="{{ asset('assets/profile' . $randomNumber . '.jpg') }}" alt="profile"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    @else
+                        <img src="{{ asset('assets/profile_guest.png') }}" alt="profile"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    @endauth
                 </a>
 
-                <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                    @csrf
-                    <button type="submit" class="btn btn-outline-warning btn-sm text-nowrap">Logout</button>
-                </form>
-            @else
-                <a href="{{ route('login') }}" class="btn btn-outline-warning btn-sm me-1 me-sm-2 text-nowrap">
-                    <span class="d-none d-sm-inline">Sign In</span>
-                    <span class="d-inline d-sm-none">Sign In</span>
-                </a>
-            @endauth
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                    @auth
+                        @if (Auth::user()->role === 'admin')
+                            <a href="{{ route('admin.panel') }}" class="dropdown-item">
+                                <span class="fw-semibold">Admin Panel</span>
+                            </a>
+                        @endif
+
+                        <a href="{{ route('my-books.index') }}" class="dropdown-item">
+                            <span class="fw-semibold">My Books</span>
+                        </a>
+
+                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                            @csrf
+                            <button type="submit" class="dropdown-item fw-semibold">Logout</button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="dropdown-item">
+                            <span class="fw-semibold">Sign In</span>
+                        </a>
+                    @endauth
+                </ul>
+            </div>
         </div>
+
     </div>
 </div>
