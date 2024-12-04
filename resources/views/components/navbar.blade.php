@@ -51,15 +51,21 @@
 
             {{-- profile --}}
             <div class="dropdown">
-                <a class="d-block position-relative rounded-circle bg-secondary overflow-hidden"
+                <a class="d-block position-relative rounded-circle overflow-hidden"
                     style="width: 40px; height: 40px; cursor: pointer;" id="profileDropdown" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    <svg class="position-absolute" style="width: 48px; height: 48px; left: -4px; color: #adb5bd;"
-                        fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                            clip-rule="evenodd"></path>
-                    </svg>
+                    @auth
+                        @php
+                            $randomNumber = rand(1, 3);
+                        @endphp
+                        <img src="{{ asset('assets/profile' . $randomNumber . '.jpg') }}" alt="profile"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    @else
+                        <img src="{{ asset('assets/profile_guest.png') }}" alt="profile"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    @endauth
                 </a>
+
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                     @auth
                         @if (Auth::user()->role === 'admin')
