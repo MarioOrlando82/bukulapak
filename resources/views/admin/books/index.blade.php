@@ -20,7 +20,7 @@
                 No books available. Please add a book.
             </div>
         @else
-            <div class="table table-responsive d-flex justify-content-center">
+            <div class="table-responsive">
                 <table class="table books-table align-top">
                     <thead>
                         <tr>

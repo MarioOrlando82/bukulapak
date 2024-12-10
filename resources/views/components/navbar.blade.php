@@ -3,12 +3,12 @@
     <div class="d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
             <a href="/" class="fs-6 m-0 text-decoration-none text-dark">
-                <img src="{{ asset('assets/bukulapak_home.png') }}" alt="Home" class="w-25">
+                <img src="{{ asset('assets/bukulapak_home.png') }}" alt="Home" class="bukulapak-logo img-fluid">
             </a>
         </div>
 
         <div class="d-flex align-items-center">
-            <div class="dropdown d-inline me-3">
+            <div class="dropdown d-inline lang">
                 <button class="btn dropdown-toggle text-white" type="button" id="languageDropdown"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <span id="selectedLanguage" class="fw-semibold lang-text">English</span>
@@ -32,7 +32,7 @@
 
             </div>
 
-            <div class="me-3 text-nowrap">
+            <div class="text-nowrap welcome">
                 @auth
                     <p class="text-white text-center mb-0 fw-semibold">Welcome, {{ Auth::user()->name }}!</p>
                 @else

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container mt-4 mb-5">
-        <div class="categories-top-section d-flex flex-column align-items-end ">
+        <div class="categories-top-section d-flex flex-column align-items-end">
             <h2 class="text-center w-100 fs-2 mb-4 mt-2">Categories</h2>
             <a href="{{ route('categories.create') }}" class="btn btn-warning mt-3 fw-semibold d-flex align-items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle me-2" viewBox="0 0 16 16">
@@ -70,8 +70,6 @@
                         @endforeach
                     </tbody>
                 </table>
-
-
             </div>
         @endif
     </div>

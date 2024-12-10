@@ -9,12 +9,12 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="content">Review Content</label>
+                        <label for="content fw-semibold">Review Content</label>
                         <textarea name="content" id="content" class="form-control custom-input fw-semibold form-input" rows="4" required>{{ $review->content }}</textarea>
                     </div>
 
                     <div class="mb-3">
-                        <label for="rating">Rating (1-5)</label>
+                        <label for="rating fw-semibold">Rating (1-5)</label>
                         <input type="number" name="rating" id="rating" class="form-control custom-input fw-semibold form-input" min="1"
                             max="5" value="{{ $review->rating }}" required>
                     </div>
