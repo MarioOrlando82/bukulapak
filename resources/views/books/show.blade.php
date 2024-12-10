@@ -1,11 +1,11 @@
 @extends('master.master')
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container mt-4 mb-5">
         <div class="row">
             <div class="col-md-4 d-grid">
                 <img src="data:image/jpeg;base64,{{ $book->cover_image }}" class="img-fluid" alt="{{ $book->title }}">
-                <a href="{{ route('transactions.create', $book->id) }}" class="btn btn-warning text-black mt-4"><span
+                <a href="{{ route('transactions.create', $book->id) }}" class="btn btn-warning text-white mt-4"><span
                         class="fw-semibold">Buy Now for</span>
                     <strong>Rp{{ number_format($book->price, 0, ',', '.') }}</strong></a>
                 <a href="{{ route('book.index') }}" class="btn btn-secondary mt-3 fw-semibold">Back to Books</a>
@@ -29,7 +29,7 @@
                                     @if (Auth::user()->id === $review->user_id)
                                         <div class="position-absolute top-0 end-0 mt-2 me-2">
                                             <a href="{{ route('reviews.edit', $review->id) }}"
-                                                class="btn btn-sm btn-outline-warning">
+                                                class="btn btn-sm btn-warning text-white">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                     fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                     <path
@@ -42,7 +42,7 @@
                                                 style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                <button type="submit" class="btn btn-sm btn-danger">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                                         <path
@@ -84,14 +84,14 @@
                 <form action="{{ route('reviews.store', $book->id) }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <textarea name="content" class="form-control fw-semibold" placeholder="Write your review here..." required></textarea>
+                        <textarea name="content" class="form-control fw-semibold custom-input" placeholder="Write your review here..." required></textarea>
                     </div>
                     <div class="form-group mt-2">
-                        <label for="rating" class="fw-semibold">Rating (1-5):</label>
-                        <input type="number" name="rating" class="form-control fw-semibold" min="1" max="5"
+                        <label for="rating" class="fw-semibold">Rating (1-5)</label>
+                        <input type="number" name="rating" class="form-control fw-semibold custom-input" min="1" max="5"
                             required>
                     </div>
-                    <button type="submit" class="btn btn-warning mt-3 fw-semibold mb-5">Submit Review</button>
+                    <button type="submit" class="btn btn-warning mt-3 fw-semibold mb-5 text-white">Submit Review</button>
                 </form>
             @endauth
         </div>

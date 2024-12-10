@@ -1,11 +1,49 @@
 @extends('master.master')
 
 @section('content')
-    <div class="container mt-4">
-        <h2>Transaction for {{ $book->title }}</h2>
-        <p><strong>Amount:</strong> Rp{{ number_format($transaction->amount, 0, ',', '.') }}</p>
-        <button type="submit" class="btn btn-success" id="pay-button">Complete Payment</button>
-        <a href="{{ route('book.index') }}" class="btn btn-secondary">Cancel</a>
+    <div class="container mt-4 mb-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card d-flex flex-row p-3">
+                    <img src="data:image/jpeg;base64,{{ $book->cover_image }}" class="img-fluid rounded w-25 me-3"
+                        alt="Album Art">
+                    <div class="d-flex flex-column ms-2 justify-content-between">
+                        <div>
+                            <h2>{{ $book->title }}</h2>
+                            <p class="fw-semibold fs-5 text-black-50">by {{ $book->author }}</p>
+                            <p class="fw-semibold fs-4 text-black">Rp{{ number_format($book->price, 0, ',', '.') }}</p>
+                        </div>
+                        <p class="text-danger fst-italic" style="font-size: 0.75em;">
+                            *The purchase of this book is for personal use only. Any reproduction, distribution, or
+                            public
+                            display of the book’s content without prior permission from the publisher or author is
+                            strictly
+                            prohibited.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4">
+                    <h6 class="fw-bold">COST SUMMARY</h6>
+                    <div class="d-flex justify-content-between fw-semibold">
+                        <span>Subtotal</span>
+                        <span>Rp{{ number_format($book->price, 0, ',', '.') }}</span>
+                    </div>
+                    <div class="d-flex justify-content-between fw-semibold">
+                        <span>Estimated Tax</span>
+                        <span>Rp0</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between fw-bold">
+                        <span>Total</span>
+                        <span>Rp{{ number_format($book->price, 0, ',', '.') }}</span>
+                    </div>
+                    <button type="submit" class="btn btn-warning my-3 fw-semibold text-white" id="pay-button">Complete Payment</button>
+                    <a href="{{ route('book.index') }}" class="btn btn-danger fw-semibold">Cancel</a>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
