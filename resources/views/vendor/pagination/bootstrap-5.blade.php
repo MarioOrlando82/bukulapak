@@ -24,11 +24,11 @@
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
                             <li class="page-item active">
-                                <span class="page-link fs-5">{{ $page }}</span>
+                                <span class="page-link fs-6">{{ $page }}</span>
                             </li>
                         @else
                             <li class="page-item">
-                                <a class="page-link fs-5" href="{{ $url }}">{{ $page }}</a>
+                                <a class="page-link fs-6" href="{{ $url }}">{{ $page }}</a>
                             </li>
                         @endif
                     @endforeach

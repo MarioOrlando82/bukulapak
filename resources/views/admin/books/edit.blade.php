@@ -1,57 +1,61 @@
 @extends('master.master')
 @section('content')
-    <div class="container mt-4">
-        <h2>Edit Book</h2>
-        <form id="editBookForm" action="{{ route('books.update', $book->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-            <div class="mb-3">
-                <label for="category_id" class="form-label">Category</label>
-                <select name="category_id" id="category_id" class="form-control">
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" {{ $book->category_id == $category->id ? 'selected' : '' }}>
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
-                </select>
-                <div class="invalid-feedback">Please select a category.</div>
+    <div class="container mt-4 mb-5">
+        <h2 class="mb-4">Edit Book</h2>
+        <div class="card shadow-sm" style="background-color: #f9f9f9">
+            <div class="card-body">
+                <form id="editBookForm" action="{{ route('books.update', $book->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-3">
+                        <label for="category_id" class="form-label">Category</label>
+                        <select name="category_id" id="category_id" class="form-control custom-input fw-semibold form-input">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{ $book->category_id == $category->id ? 'selected' : '' }} class="fw-semibold">
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <div class="invalid-feedback">Please select a category.</div>
+                    </div> 
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="title" id="title" class="form-control custom-input fw-semibold form-input" value="{{ $book->title }}">
+                        <div class="invalid-feedback">Title is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="author" class="form-label">Author</label>
+                        <input type="text" name="author" id="author" class="form-control custom-input fw-semibold form-input" value="{{ $book->author }}">
+                        <div class="invalid-feedback">Author is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="description" id="description" class="form-control custom-input fw-semibold form-input" rows="5">{{ $book->description }}</textarea>
+                        <div class="invalid-feedback">Description is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cover_image" class="form-label">Cover Image</label>
+                        <input type="file" name="cover_image" id="cover_image" class="form-control custom-input fw-semibold form-input">
+                        <small>Leave blank to keep the current image.</small>
+                        <div class="invalid-feedback">The file must be an image (jpg, png, jpeg, gif).</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pdf_file" class="form-label">PDF File</label>
+                        <input type="file" name="pdf_file" id="pdf_file" class="form-control custom-input fw-semibold form-input">
+                        <small>Leave blank to keep the current file.</small>
+                        <div class="invalid-feedback">The file must be a PDF and no larger than 10 MB.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="price" id="price" class="form-control custom-input fw-semibold form-input" step="0.01"
+                            value="{{ $book->price }}">
+                        <div class="invalid-feedback">Price is required and must be a valid number.</div>
+                    </div>
+                    <button type="submit" class="btn btn-warning fw-semibold mt-3 text-white">Update</button>
+                    <a href="{{ route('books.index') }}" class="btn btn-secondary fw-semibold mt-3 ms-3">Back</a>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control" value="{{ $book->title }}">
-                <div class="invalid-feedback">Title is required.</div>
-            </div>
-            <div class="mb-3">
-                <label for="author" class="form-label">Author</label>
-                <input type="text" name="author" id="author" class="form-control" value="{{ $book->author }}">
-                <div class="invalid-feedback">Author is required.</div>
-            </div>
-            <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea name="description" id="description" class="form-control" rows="5">{{ $book->description }}</textarea>
-                <div class="invalid-feedback">Description is required.</div>
-            </div>
-            <div class="mb-3">
-                <label for="cover_image" class="form-label">Cover Image</label>
-                <input type="file" name="cover_image" id="cover_image" class="form-control">
-                <small>Leave blank to keep the current image.</small>
-                <div class="invalid-feedback">The file must be an image (jpg, png, jpeg, gif).</div>
-            </div>
-            <div class="mb-3">
-                <label for="pdf_file" class="form-label">PDF File</label>
-                <input type="file" name="pdf_file" id="pdf_file" class="form-control">
-                <small>Leave blank to keep the current file.</small>
-                <div class="invalid-feedback">The file must be a PDF and no larger than 10 MB.</div>
-            </div>
-            <div class="mb-3">
-                <label for="price" class="form-label">Price</label>
-                <input type="number" name="price" id="price" class="form-control" step="0.01"
-                    value="{{ $book->price }}">
-                <div class="invalid-feedback">Price is required and must be a valid number.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
-            <a href="{{ route('books.index') }}" class="btn btn-secondary">Back</a>
-        </form>
+        </div>
     </div>
 
     <script>

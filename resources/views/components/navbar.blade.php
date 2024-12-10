@@ -1,55 +1,45 @@
-<div class="bg-warning text-white py-2 col-12 ps-3 pe-3">
+<div
+    class="py-2 col-12 px-3 z-3 w-100 position-fixed top-0 start-0 {{ request()->routeIs(['login', 'register']) ? 'bg-transparent' : 'bg-warning' }}">
     <div class="d-flex align-items-center justify-content-between">
         <div class="d-flex align-items-center">
-            <div class="">
-                <a href="/" class="fs-6 m-0 text-decoration-none text-dark">
-                    <img src="{{ asset('assets/bukulapak_home.png') }}" alt="Home" class="w-25">
-                </a>
-            </div>
+            <a href="/" class="fs-6 m-0 text-decoration-none text-dark">
+                <img src="{{ asset('assets/bukulapak_home.png') }}" alt="Home" class="w-25">
+            </a>
         </div>
 
         <div class="d-flex align-items-center">
-            {{-- select language --}}
             <div class="dropdown d-inline me-3">
-                <button class="btn dropdown-toggle text-black" type="button" id="languageDropdown"
+                <button class="btn dropdown-toggle text-white" type="button" id="languageDropdown"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <span id="selectedLanguage" class="fw-semibold">English</span>
-                    <img src="https://flagcdn.com/20x15/gb.png"
-                        srcset="https://flagcdn.com/40x30/gb.png 2x,
-    https://flagcdn.com/60x45/gb.png 3x"
-                        width="20" height="15" alt="United Kingdom">
+                    <span id="selectedLanguage" class="fw-semibold lang-text">English</span>
+                    <img src="https://flagcdn.com/20x15/gb.png" width="20" height="15">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
                     <li>
                         <a class="dropdown-item" href="?lang=en" data-lang="en">
                             <span class="fw-semibold">English</span>
-                            <img src="https://flagcdn.com/20x15/gb.png"
-                                srcset="https://flagcdn.com/40x30/gb.png 2x, https://flagcdn.com/60x45/gb.png 3x"
-                                width="20" height="15" alt="United Kingdom">
+                            <img src="https://flagcdn.com/20x15/gb.png" width="20" height="15"
+                                alt="United Kingdom">
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item" href="?lang=id" data-lang="id">
                             <span class="fw-semibold">Bahasa Indonesia</span>
-                            <img src="https://flagcdn.com/20x15/id.png"
-                                srcset="https://flagcdn.com/40x30/id.png 2x, https://flagcdn.com/60x45/id.png 3x"
-                                width="20" height="15" alt="Indonesia">
+                            <img src="https://flagcdn.com/20x15/id.png" width="20" height="15" alt="Indonesia">
                         </a>
                     </li>
                 </ul>
 
             </div>
 
-            {{-- welcome --}}
             <div class="me-3 text-nowrap">
                 @auth
-                    <p class="text-black text-center mb-0 fw-semibold">Welcome, {{ Auth::user()->name }}!</p>
+                    <p class="text-white text-center mb-0 fw-semibold">Welcome, {{ Auth::user()->name }}!</p>
                 @else
-                    <p class="text-black text-center mb-0 fw-semibold">Welcome, Guest!</p>
+                    <p class="text-white text-center mb-0 fw-semibold">Welcome, Guest!</p>
                 @endauth
             </div>
 
-            {{-- profile --}}
             <div class="dropdown">
                 <a class="d-block position-relative rounded-circle overflow-hidden"
                     style="width: 40px; height: 40px; cursor: pointer;" id="profileDropdown" data-bs-toggle="dropdown"
