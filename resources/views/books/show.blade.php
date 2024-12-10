@@ -11,7 +11,7 @@
                 <a href="{{ route('book.index') }}" class="btn btn-secondary mt-3 fw-semibold">Back to Books</a>
             </div>
             <div class="col-md-8">
-                <h2>{{ $book->title }}</h2>
+                <h2 class="book-show-title">{{ $book->title }}</h2>
                 <p>by <span class="fw-semibold">{{ $book->author }}</span></p>
                 <p class="fw-medium"><span
                         class="border border-warning py-1 px-2 rounded-pill">{{ $book->category->name }}</span></p>
@@ -95,6 +95,5 @@
                 </form>
             @endauth
         </div>
-
     </div>
 @endsection

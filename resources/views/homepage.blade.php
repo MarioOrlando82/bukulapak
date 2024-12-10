@@ -5,16 +5,16 @@
         <div class="position-relative overflow-hidden px-3">
             <img src="{{ asset('assets/hero.png') }}" alt="Hero" class="img-fluid w-100 rounded">
             <div class="position-absolute top-50 start-0 translate-middle-y px-4 p-2 p-sm-3 p-md-5 pe-4 pe-sm-0">
-                <h1 class="fs-1 fs-sm-3 fs-md-3 fs-lg-1 fw-bold lh-1 me-4 me-sm-0">
+                <h1 class="fw-bold lh-1 me-4 me-sm-0 hero-section">
                     Reading Today for a <br class="d-none d-sm-inline">Smarter Tomorrow!
                 </h1>
-                <button class="btn btn-warning text-white mt-3 mt-sm-3 btn-sm fw-semibold p-2">Read Now</button>
+                <button class="btn btn-warning text-white btn-sm fw-semibold p-2 custom-button" onclick="scrollToSearch()">Read Now</button>
             </div>
         </div>
 
         <div class="col-12 mt-4">
             <div class="row justify-content-center align-items-center py-2">
-                <div class="col-5">
+                <div class="col-lg-5 col-md-6 col-sm-10 col-11" id="search">
                     <form method="GET" action="{{ route('book.index') }}" class="input-group input-group-sm">
                         @csrf
                         <input type="text" class="form-control border border-warning fw-semibold p-2 pe-2 custom-input"
@@ -28,7 +28,7 @@
 
         <div class="row mt-2 mt-md-4 px-2 px-md-3">
             <div class="col-12">
-                <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
+                <div class="d-flex flex-wrap justify-content-start gap-2">
                     <div class="dropdown">
                         <button class="btn btn-sm btn-outline-warning dropdown-toggle fw-semibold filter" type="button"
                             id="categoryFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -118,4 +118,13 @@
 
         {{ $books->links() }}
     </div>
+
+    <script>
+        function scrollToSearch() {
+            const element = document.getElementById('search');
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    </script>
 @endsection
+
+

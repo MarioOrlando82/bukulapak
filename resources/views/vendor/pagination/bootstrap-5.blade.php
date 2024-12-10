@@ -1,7 +1,6 @@
 @if ($paginator->hasPages())
     <nav>
         <ul class="pagination mt-4">
-            {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
                 <li class="page-item disabled">
                     <span class="page-link bigger-arrow">&lsaquo;</span>
@@ -12,14 +11,10 @@
                 </li>
             @endif
 
-            {{-- Pagination Elements --}}
             @foreach ($elements as $element)
-                {{-- "Three Dots" Separator --}}
                 @if (is_string($element))
                     <li class="page-item disabled"><span class="page-link">{{ $element }}</span></li>
                 @endif
-
-                {{-- Array Of Links --}}
                 @if (is_array($element))
                     @foreach ($element as $page => $url)
                         @if ($page == $paginator->currentPage())
@@ -35,7 +30,6 @@
                 @endif
             @endforeach
 
-            {{-- Next Page Link --}}
             @if ($paginator->hasMorePages())
                 <li class="page-item">
                     <a class="page-link bigger-arrow" href="{{ $paginator->nextPageUrl() }}" rel="next">&rsaquo;</a>

@@ -19,7 +19,7 @@ main {
     box-shadow: 0 0 10px #f3c736;
 }
 
-input[type=file]::file-selector-button {
+input[type="file"]::file-selector-button {
     background-color: #f3c736;
     color: #ffffff;
 }
@@ -33,8 +33,22 @@ input[type=file]::file-selector-button {
     background-color: #eeeeee;
 }
 
+/* navbar */
+.lang {
+    margin-right: 0.75rem;
+}
 
-/* navbar dropdown */
+.bukulapak-logo {
+    width: 12rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.welcome {
+    font-size: 1rem;
+    margin-right: 0.75rem;
+}
+
 .dropdown-menu {
     padding-left: 5px;
     padding-right: 5px;
@@ -47,9 +61,20 @@ input[type=file]::file-selector-button {
     border-radius: 15px;
 }
 
-
 /* Home Page */
 /* Card */
+.hero-section {
+    font-size: 2.5rem;
+}
+
+.custom-button {
+    margin-top: 0.75rem;
+}
+
+#search {
+    scroll-margin-top: 5rem; 
+}
+
 .card {
     overflow: hidden;
     border: 1px solid #ddd;
@@ -59,7 +84,7 @@ input[type=file]::file-selector-button {
 .card-flip {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 25rem;
     transform-style: preserve-3d;
     transition: transform 1s ease-in-out;
 }
@@ -103,15 +128,15 @@ input[type=file]::file-selector-button {
 }
 
 /* filter */
-.filter{
+.filter {
     color: #000000;
 }
 
-.filter:hover{
+.filter:hover {
     color: #ffffff;
 }
 
-.filter:focus{
+.filter:focus {
     color: #ffffff;
 }
 
@@ -166,7 +191,6 @@ input[type=file]::file-selector-button {
     font-size: 2rem;
 }
 
-
 /* Admin Panel */
 .categories-table {
     width: 60%;
@@ -196,11 +220,13 @@ input[type=file]::file-selector-button {
     color: #4a5568;
 }
 
-.categories-table th:first-child, td:first-child {
+.categories-table th:first-child,
+td:first-child {
     width: 5%;
 }
 
-.categories-table th:last-child, td:last-child {
+.categories-table th:last-child,
+td:last-child {
     width: 10%;
 }
 
@@ -237,11 +263,13 @@ input[type=file]::file-selector-button {
     color: #4a5568;
 }
 
-.books-table th:first-child, td:first-child {
+.books-table th:first-child,
+td:first-child {
     width: 5%;
 }
 
-.books-table th:last-child, td:last-child {
+.books-table th:last-child,
+td:last-child {
     width: 10%;
 }
 
@@ -251,18 +279,18 @@ input[type=file]::file-selector-button {
 }
 
 .card-categories {
-    background: linear-gradient(135deg, #FFCF81, #FDFFAB);
+    background: linear-gradient(135deg, #ffcf81, #fdffab);
     overflow: hidden;
     border-radius: 15px;
-    height: 300px;
+    height: 18.75rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-books {
-    background: linear-gradient(135deg, #FFBD73, #FEEE91);
+    background: linear-gradient(135deg, #ffbd73, #feee91);
     overflow: hidden;
     border-radius: 15px;
-    height: 300px;
+    height: 18.75rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -281,10 +309,9 @@ input[type=file]::file-selector-button {
     z-index: 1;
 }
 
-
 /* my-books */
 .my-books {
-    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 .my-books:hover {
@@ -293,14 +320,13 @@ input[type=file]::file-selector-button {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Login Page */
-.link{
+.link {
     cursor: pointer;
     text-decoration: none;
 }
 
-.link:hover{
+.link:hover {
     text-decoration: underline;
 }
 
@@ -309,45 +335,118 @@ input[type=file]::file-selector-button {
     background: #ffda6a;
     color: #face3c;
 }
-.left-section{
+.left-section {
     width: 40%;
     background-color: rgb(255, 243, 205);
 }
 
 .right-section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
-    left: 0; 
-    width: 100%; 
+    left: 0;
+    width: 100%;
     height: 100%;
     background: linear-gradient(
-        to right, 
-        rgb(255,243,205) 10%, 
-        rgba(255, 204, 0, 0) 100% 
+        to right,
+        rgb(255, 243, 205) 10%,
+        rgba(255, 204, 0, 0) 100%
     );
-    pointer-events: none; 
-    z-index: 2; 
+    pointer-events: none;
+    z-index: 2;
 }
-
 
 
 /* RESPONSIVE */
 
 @media (max-width: 768px) {
+    /* NAVBAR */
+    .lang {
+        margin-right: 0.2rem;
+    }
+
+    .welcome {
+        font-size: 0.75rem;
+        margin-right: 0.25rem;
+    }
+
+    /* HOME PAGE */
+    .hero-section {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+        max-width: 50%;
+    }
+
+    .custom-button {
+        margin-left: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    .filter {
+        margin-left: 0.5rem;
+    }
+
+    .card-flip {
+        height: 20rem;
+    }
+
+    /* SHOW BOOK */
+    .book-show-title {
+        margin-top: 1rem;
+    }
+
+    /* MY BOOK */
+    .my-books {
+        margin-top: 2rem;
+    }
+
+    /* ADMIN PANEL */
+    .card-books,
+    .card-categories {
+        height: 15rem;
+        margin-bottom: 2rem;
+    }
+
+    .categories-top-section, .books-top-section {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
     /* LOGIN-REGISTER */
     .left-section {
         width: 100%;
         background-color: rgba(255, 243, 205, 0.95);
     }
 
+    .bukulapak-logo {
+        width: 10rem; 
+    }
+
     .right-section {
         display: none;
     }
 
-
     /* NAVBAR */
-    .lang-text{
+    .lang-text {
         display: none;
+    }
+
+    /* ADMIN BOOK  */
+    .books-table th,
+    .books-table td {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-flip {
+        height: 25rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .card-flip {
+        height: 30rem;
     }
 }
