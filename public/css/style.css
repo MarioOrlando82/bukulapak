@@ -356,6 +356,11 @@ td:last-child {
     z-index: 2;
 }
 
+/* Payment */
+.disclaimer{
+    font-size: 0.75em;
+}
+
 
 /* RESPONSIVE */
 
@@ -436,6 +441,15 @@ td:last-child {
     .books-table td {
         font-size: 0.8rem;
         padding: 10px;
+    }
+
+    /* PAYMENT */
+    .disclaimer{
+        font-size: 0.6em;
+    }
+
+    .payment-left{
+        margin-bottom: 1rem;
     }
 }
 
