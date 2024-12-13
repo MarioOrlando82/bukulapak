@@ -3,28 +3,28 @@
 @section('content')
     <div class="container mt-4 mb-5">
         <div class="categories-top-section d-flex flex-column align-items-end">
-            <h2 class="text-center w-100 fs-2 mb-4 mt-2">Categories</h2>
+            <h2 class="text-center w-100 fs-2 mb-4 mt-2">@lang('admin.label_category')</h2>
             <a href="{{ route('categories.create') }}" class="btn btn-warning mt-3 fw-semibold d-flex align-items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle me-2" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
                   </svg>
-                Add Category
+                @lang('admin.label_addCategory')
             </a>
         </div>
 
         @if ($categories->isEmpty())
             <div class="alert alert-info text-center">
-                No categories found. Please add a category.
+                @lang('admin.label_categoryEmpty')
             </div>
         @else
             <div class="table table-responsive d-flex justify-content-center">
                 <table class="table categories-table align-top">
                     <thead>
                         <tr>
-                            <th class="text-center">ID</th>
-                            <th>Name</th>
-                            <th class="text-center">Actions</th>
+                            <th class="text-center">@lang('admin.label_id')</th>
+                            <th>@lang('admin.label_name')</th>
+                            <th class="text-center">@lang('admin.label_actions')</th>
                         </tr>
                     </thead>
                     <tbody>

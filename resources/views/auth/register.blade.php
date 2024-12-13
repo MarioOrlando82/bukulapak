@@ -8,10 +8,10 @@
         <div class="d-flex align-items-center justify-content-center z-1 left-section">
             <div class="col-sm-12 col-md-8 col-lg-8 mt-5">
                 <div class="mb-4 ms-2">
-                    <p class="text-black fw-bold mb-2 fs-2">Create New Account<span class="text-warning">.</span></p>
+                    <p class="text-black fw-bold mb-2 fs-2">@lang('auth.lbl_registerTitle')<span class="text-warning">.</span></p>
                     <p class="text-black text-decoration-none fw-semibold">
-                        Already have an account? <a class="text-warning fw-bold link" href="{{ route('login') }}">Login
-                            Here</a>
+                        @lang('auth.lbl_login') <a class="text-warning fw-bold link" href="{{ route('login') }}">
+                            @lang('auth.link_login')</a>
                     </p>
                 </div>
                 <div>
@@ -20,34 +20,34 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control fw-semibold custom-input border-0" id="name"
                                 name="name" placeholder="Name" autocomplete="off" style="border-radius: 15px;">
-                            <label for="name" style="font-weight: 500;">Name</label>
-                            <div class="invalid-feedback">Name is required.</div>
+                            <label for="name" style="font-weight: 500;">@lang('auth.lbl_name')</label>
+                            <div class="invalid-feedback">@lang('auth.lbl_nameReq')</div>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control fw-semibold custom-input border-0" id="email"
                                 name="email" placeholder="Email" autocomplete="off" style="border-radius: 15px;">
-                            <label for="email" style="font-weight: 500;">Email</label>
-                            <div class="invalid-feedback">Please enter a valid email.</div>
+                            <label for="email" style="font-weight: 500;">@lang('auth.lbl_email')</label>
+                            <div class="invalid-feedback">@lang('auth.lbl_emailReq')</div>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="password" class="form-control fw-semibold custom-input border-0" id="password"
                                 name="password" placeholder="Password" style="border-radius: 15px;">
-                            <label for="password" style="font-weight: 500;">Password</label>
+                            <label for="password" style="font-weight: 500;">@lang('auth.lbl_password')</label>
                             <div class="invalid-feedback">
-                                Password must be at least 8 characters long.
+                                @lang('auth.lbl_passwordShort')
                             </div>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="password" class="form-control fw-semibold custom-input border-0"
                                 id="password_confirmation" name="password_confirmation" placeholder="Confirm Password"
                                 style="border-radius: 15px;">
-                            <label for="password_confirmation" style="font-weight: 500;">Confirm Password</label>
+                            <label for="password_confirmation" style="font-weight: 500;">@lang('auth.lbl_passwordConfirm')</label>
                             <div class="invalid-feedback">
-                                Passwords do not match.
+                                @lang('auth.lbl_passwordConfirmReq')
                             </div>
                         </div>
                         <button type="submit" class="btn btn-warning w-100 text-white my-3 fw-semibold"
-                            style="border-radius: 15px">Register</button>
+                            style="border-radius: 15px">@lang('auth.btn_register')</button>
                     </form>
                 </div>
             </div>

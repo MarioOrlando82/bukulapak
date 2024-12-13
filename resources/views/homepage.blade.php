@@ -6,9 +6,9 @@
             <img src="{{ asset('assets/hero.png') }}" alt="Hero" class="img-fluid w-100 rounded">
             <div class="position-absolute top-50 start-0 translate-middle-y px-4 p-2 p-sm-3 p-md-5 pe-4 pe-sm-0">
                 <h1 class="fw-bold lh-1 me-4 me-sm-0 hero-section">
-                    Reading Today for a <br class="d-none d-sm-inline">Smarter Tomorrow!
+                    @lang('homepage.hero_label1')<br class="d-none d-sm-inline">@lang('homepage.hero_label2')
                 </h1>
-                <button class="btn btn-warning text-white btn-sm fw-semibold p-2 custom-button" onclick="scrollToSearch()">Read Now</button>
+                <button class="btn btn-warning text-white btn-sm fw-semibold p-2 custom-button" onclick="scrollToSearch()">@lang('homepage.btn_readNow')</button>
             </div>
         </div>
 
@@ -18,9 +18,9 @@
                     <form method="GET" action="{{ route('book.index') }}" class="input-group input-group-sm">
                         @csrf
                         <input type="text" class="form-control border border-warning fw-semibold p-2 pe-2 custom-input"
-                            placeholder="Search Book" name="search" value="{{ request('search') }}"
+                            placeholder="@lang('homepage.search_holder')" name="search" value="{{ request('search') }}"
                             style="border-radius: 5px 0px 0px 5px">
-                        <button class="btn btn-warning fw-semibold text-white" type="submit">Search</button>
+                        <button class="btn btn-warning fw-semibold text-white" type="submit">@lang('homepage.btn_search')</button>
                     </form>
                 </div>
             </div>
@@ -32,24 +32,23 @@
                     <div class="dropdown">
                         <button class="btn btn-sm btn-outline-warning dropdown-toggle fw-semibold filter" type="button"
                             id="categoryFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Filter by Category
+                            @lang('homepage.btn_filter')
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="categoryFilterDropdown">
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['category' => 'all']) }}">All
-                                    Categories</a></li>
+                                    href="{{ route('book.index', ['category' => 'all']) }}">@lang('homepage.li_category1')</a></li>
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['category' => 'Educational']) }}">Educational</a></li>
+                                    href="{{ route('book.index', ['category' => 'Educational']) }}">@lang('homepage.li_category2')</a></li>
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['category' => 'Novel']) }}">Novel</a>
+                                    href="{{ route('book.index', ['category' => 'Novel']) }}">@lang('homepage.li_category3')</a>
                             </li>
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['category' => 'Comic']) }}">Comic</a>
+                                    href="{{ route('book.index', ['category' => 'Comic']) }}">@lang('homepage.li_category4')</a>
                             </li>
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['category' => 'Inspirational']) }}">Inspirational</a></li>
+                                    href="{{ route('book.index', ['category' => 'Inspirational']) }}">@lang('homepage.li_category5')</a></li>
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['category' => 'Kid']) }}">Kid</a>
+                                    href="{{ route('book.index', ['category' => 'Kid']) }}">@lang('homepage.li_category6')</a>
                             </li>
                         </ul>
                     </div>
@@ -57,18 +56,18 @@
                     <div class="dropdown">
                         <button class="btn btn-sm btn-outline-warning dropdown-toggle fw-semibold filter" type="button"
                             id="priceSortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sort by Price
+                            @lang('homepage.btn_sort')
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="priceSortDropdown">
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['sort' => 'price_asc', 'category' => request('category')]) }}">Lowest
-                                    Price</a></li>
+                                    href="{{ route('book.index', ['sort' => 'price_asc', 'category' => request('category')]) }}">@lang('homepage.li_sort1')
+                                    </a></li>
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['sort' => 'price_desc', 'category' => request('category')]) }}">Highest
-                                    Price</a></li>
+                                    href="{{ route('book.index', ['sort' => 'price_desc', 'category' => request('category')]) }}">@lang('homepage.li_sort2')
+                                    </a></li>
                             <li><a class="dropdown-item fw-semibold"
-                                    href="{{ route('book.index', ['sort' => null, 'category' => request('category')]) }}">All
-                                    Prices</a></li>
+                                    href="{{ route('book.index', ['sort' => null, 'category' => request('category')]) }}">@lang('homepage.li_sort3')
+                                    </a></li>
                         </ul>
                     </div>
 
@@ -81,8 +80,8 @@
                 <div class="d-flex flex-column align-items-center justify-content-center text-center w-100">
                     <img src="{{ asset('assets/search_not_found.png') }}" class="img-fluid mb-2"
                         alt="No Matching Books Found" style="max-width: 400px; height: auto;">
-                    <h3>No Matching Books Found</h3>
-                    <p class="text-muted mb-5">Try searching with different keywords</p>
+                    <h3>@lang('homepage.h3_searchNotFound')</h3>
+                    <p class="text-muted mb-5">@lang('homepage.p_searchNotFound')</p>
                 </div>
             @else
                 @foreach ($books as $book)
