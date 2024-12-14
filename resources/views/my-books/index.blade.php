@@ -15,7 +15,7 @@
             @else
                 @foreach ($myBooks as $myBook)
                     <div class="col-md-3">
-                        <div class="card my-books">
+                        <div class="card my-books mb-4">
                             <img src="data:image/jpeg;base64,{{ $myBook->book->cover_image }}" class="card-img-top"
                                 alt="{{ $myBook->book->title }}">
                             <div class="card-body">
@@ -24,7 +24,6 @@
                                     class="btn btn-warning text-white fw-semibold mt-2">
                                     @lang('my-books.lbl_bookDownload')
                                 </a>
-
                             </div>
                         </div>
                     </div>
