@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'lbl_bookTitle' => 'My Books',
-    'lbl_bookEmpty' => 'No Books Found in Your Collection',
-    'lbl_bookStart' => 'Try adding some books to get started!',
-    'lbl_bookDownload' => 'Download PDF',
+    'lbl_bookTitle' => 'Мои книги',
+    'lbl_bookEmpty' => 'В вашей коллекции нет книг',
+    'lbl_bookStart' => 'Попробуйте добавить несколько книг, чтобы начать!',
+    'lbl_bookDownload' => 'Скачать PDF',
 ];
 
 ?>

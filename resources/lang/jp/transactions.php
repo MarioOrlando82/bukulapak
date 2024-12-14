@@ -1,16 +1,14 @@
 <?php
 
 return [
-    'lbl_by' => 'by',
-    'lbl_disclaimer' => '*The purchase of this book is for personal use only. Any reproduction, distribution, or
-                            public display of the book’s content without prior permission from the publisher or author is
-                            strictly prohibited.',
-    'lbl_cost' => 'COST SUMMARY',
-    'lbl_subtotal' => 'Subtotal',
-    'lbl_tax' => 'Estimated Tax',
-    'lbl_total' => 'Total',
-    'btn_pay' => 'Complete Payment',
-    'lbl_cancel' => 'Cancel',
+    'lbl_by' => '著者',
+    'lbl_disclaimer' => '*この本の購入は個人使用のみが目的です。出版社または著者の事前許可なしに、本の内容を複製、配布、または公に表示することは禁止されています。',
+    'lbl_cost' => '費用の概要',
+    'lbl_subtotal' => '小計',
+    'lbl_tax' => '推定税額',
+    'lbl_total' => '合計',
+    'btn_pay' => '支払いを完了する',
+    'lbl_cancel' => 'キャンセル',
 ];
 
 ?>

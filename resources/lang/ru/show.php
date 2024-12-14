@@ -1,14 +1,15 @@
 <?php
 
 return [
-    'lbl_buy' => 'Buy Now for',
-    'lbl_back' => 'Back to Books',
-    'lbl_by' => 'by',
-    'lbl_reviews' => 'Reviews',
-    'lbl_reviewsEmpty' => 'No reviews yet. Be the first to review this book!',
-    'lbl_reviewAdd' => 'Write a Review',
-    'lbl_reviewRating' => 'Rating (1-5)',
-    'btn_review' => 'Submit Review',
+    'lbl_buy' => 'Купить сейчас за',
+    'lbl_back' => 'Назад к книгам',
+    'lbl_by' => 'от',
+    'lbl_reviews' => 'Отзывы',
+    'lbl_reviewsEmpty' => 'Отзывов пока нет. Будьте первым, кто оставит отзыв на эту книгу!',
+    'lbl_reviewAdd' => 'Написать отзыв',
+    'lbl_reviewHolder' => 'Напишите свой отзыв здесь...',
+    'lbl_reviewRating' => 'Оценка (1-5)',
+    'btn_review' => 'Оставить отзыв',
 ];
 
 ?>

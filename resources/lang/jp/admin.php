@@ -3,13 +3,13 @@
 return [
     // admin-panel
     'label_adminPanel' => '管理パネル',
-    'label_manageCategories' => 'カテゴリ管理',
-    'label_manageBooks' => '書籍管理',
+    'label_manageCategories' => 'カテゴリを管理',
+    'label_manageBooks' => '本を管理',
 
     // books
-    'label_book' => '書籍',
-    'label_addBook' => '新しい書籍を追加',
-    'label_editBook' => '書籍を編集',
+    'label_book' => '本',
+    'label_addBook' => '新しい本を追加',
+    'label_editBook' => '本を編集',
 
     'label_id' => 'ID',
     'label_category' => 'カテゴリ',
@@ -25,22 +25,22 @@ return [
     'label_description' => '説明',
     'label_descriptionInvalid' => '説明は必須です。',
 
-    'label_image' => 'カバー画像',
-    'label_imageKeep' => '現在の画像を保持する場合は空白のままにしてください。',
-    'label_imageInvalid' => 'ファイルは画像でなければなりません (jpg, png, jpeg, gif)。',
+    'label_image' => '表紙画像',
+    'label_imageKeep' => '現在の画像を保持するには空白のままにしてください。',
+    'label_imageInvalid' => 'ファイルは画像でなければなりません（jpg, png, jpeg, gif）。',
 
     'label_pdf' => 'PDFファイル',
-    'label_pdfKeep' => '現在のファイルを保持する場合は空白のままにしてください。',
-    'label_pdfInvalid' => 'ファイルはPDFであり、10MBを超えない必要があります。',
+    'label_pdfKeep' => '現在のファイルを保持するには空白のままにしてください。',
+    'label_pdfInvalid' => 'ファイルはPDFであり、最大10MB以下でなければなりません。',
 
     'label_price' => '価格',
-    'label_priceInvalid' => '価格は必須で、有効な数字である必要があります。',
+    'label_priceInvalid' => '価格は必須で、有効な数字でなければなりません。',
 
     'label_create' => '作成',
     'label_update' => '更新',
     'label_back' => '戻る',
 
-    'label_bookEmpty' => '利用可能な書籍はありません。書籍を追加してください。',
+    'label_bookEmpty' => '利用可能な本がありません。新しい本を追加してください。',
     'label_actions' => 'アクション',
 
     // categories

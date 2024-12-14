@@ -2,36 +2,36 @@
 
 return [
     // admin-panel
-    'label_adminPanel' => 'Панель Администратора',
-    'label_manageCategories' => 'Управление Категориями',
-    'label_manageBooks' => 'Управление Книгами',
+    'label_adminPanel' => 'Административная панель',
+    'label_manageCategories' => 'Управление категориями',
+    'label_manageBooks' => 'Управление книгами',
 
     // books
     'label_book' => 'Книги',
-    'label_addBook' => 'Добавить Новую Книгу',
-    'label_editBook' => 'Редактировать Книгу',
+    'label_addBook' => 'Добавить новую книгу',
+    'label_editBook' => 'Редактировать книгу',
 
     'label_id' => 'ID',
     'label_category' => 'Категория',
-    'label_categorySelect' => 'Выберите Категорию',
+    'label_categorySelect' => 'Выберите категорию',
     'label_CategoryInvalid' => 'Пожалуйста, выберите категорию.',
 
     'label_title' => 'Название',
-    'label_titleInvalid' => 'Название обязательно.',
+    'label_titleInvalid' => 'Название обязательно для заполнения.',
 
     'label_author' => 'Автор',
-    'label_authorInvalid' => 'Автор обязателен.',
+    'label_authorInvalid' => 'Автор обязательно для заполнения.',
 
     'label_description' => 'Описание',
-    'label_descriptionInvalid' => 'Описание обязательно.',
+    'label_descriptionInvalid' => 'Описание обязательно для заполнения.',
 
-    'label_image' => 'Изображение Обложки',
-    'label_imageKeep' => 'Оставьте пустым, чтобы сохранить текущее изображение.',
+    'label_image' => 'Обложка',
+    'label_imageKeep' => 'Оставьте пустым, чтобы сохранить текущую картинку.',
     'label_imageInvalid' => 'Файл должен быть изображением (jpg, png, jpeg, gif).',
 
-    'label_pdf' => 'PDF Файл',
+    'label_pdf' => 'PDF файл',
     'label_pdfKeep' => 'Оставьте пустым, чтобы сохранить текущий файл.',
-    'label_pdfInvalid' => 'Файл должен быть PDF и не превышать 10 MB.',
+    'label_pdfInvalid' => 'Файл должен быть в формате PDF и не превышать 10 МБ.',
 
     'label_price' => 'Цена',
     'label_priceInvalid' => 'Цена обязательна и должна быть действительным числом.',
@@ -40,17 +40,17 @@ return [
     'label_update' => 'Обновить',
     'label_back' => 'Назад',
 
-    'label_bookEmpty' => 'Книги отсутствуют. Пожалуйста, добавьте книгу.',
+    'label_bookEmpty' => 'Нет доступных книг. Пожалуйста, добавьте книгу.',
     'label_actions' => 'Действия',
 
     // categories
-    'label_addCategory' => 'Добавить Новую Категорию',
-    'label_editCategory' => 'Редактировать Категорию',
+    'label_addCategory' => 'Добавить новую категорию',
+    'label_editCategory' => 'Редактировать категорию',
 
-    'label_name' => 'Название Категории',
+    'label_name' => 'Название категории',
     'label_nameReq' => 'Название категории обязательно',
 
-    'label_categoryEmpty' => 'Категории не найдены. Пожалуйста, добавьте категорию.',
+    'label_categoryEmpty' => 'Нет категорий. Пожалуйста, добавьте категорию.',
 ];
 
 ?>

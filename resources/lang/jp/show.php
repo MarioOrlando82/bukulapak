@@ -1,14 +1,15 @@
 <?php
 
 return [
-    'lbl_buy' => 'Buy Now for',
-    'lbl_back' => 'Back to Books',
-    'lbl_by' => 'by',
-    'lbl_reviews' => 'Reviews',
-    'lbl_reviewsEmpty' => 'No reviews yet. Be the first to review this book!',
-    'lbl_reviewAdd' => 'Write a Review',
-    'lbl_reviewRating' => 'Rating (1-5)',
-    'btn_review' => 'Submit Review',
+    'lbl_buy' => '今すぐ購入する',
+    'lbl_back' => '本一覧に戻る',
+    'lbl_by' => '著者',
+    'lbl_reviews' => 'レビュー',
+    'lbl_reviewsEmpty' => 'まだレビューはありません。最初にこの本をレビューしてみましょう！',
+    'lbl_reviewAdd' => 'レビューを書く',
+    'lbl_reviewHolder' => 'ここにレビューを入力してください...',
+    'lbl_reviewRating' => '評価 (1〜5)',
+    'btn_review' => 'レビューを投稿する',
 ];
 
 ?>

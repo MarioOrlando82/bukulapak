@@ -22,6 +22,7 @@ return [
 
     'h3_searchNotFound' => 'Buku yang Cocok Tidak Ditemukan',
     'p_searchNotFound' => 'Coba cari dengan kata kunci lain',
+    'btn_detail' => 'Rincian'
 ];
 
 ?>

@@ -2,4 +2,10 @@
     @include('components.locale.ID')
 @elseif (\Illuminate\Support\Facades\App::getLocale() === 'en')
     @include('components.locale.EN')
+@elseif (\Illuminate\Support\Facades\App::getLocale() === 'jp')
+    @include('components.locale.JP')
+@elseif (\Illuminate\Support\Facades\App::getLocale() === 'kr')
+    @include('components.locale.KR')
+@elseif (\Illuminate\Support\Facades\App::getLocale() === 'ru')
+    @include('components.locale.RU')    
 @endif

@@ -7,6 +7,7 @@ return [
     'lbl_reviews' => 'Ulasan',
     'lbl_reviewsEmpty' => 'Belum ada ulasan. Jadilah yang pertama memberikan ulasan untuk buku ini!',
     'lbl_reviewAdd' => 'Tulis Ulasan',
+    'lbl_reviewHolder' => 'Tulis ulasan anda di sini...',
     'lbl_reviewRating' => 'Penilaian (1-5)',
     'btn_review' => 'Kirim Ulasan',
 ];

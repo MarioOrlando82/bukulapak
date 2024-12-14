@@ -2,7 +2,7 @@
 
 return [
     // admin-panel
-    'label_adminPanel' => 'Panel Admin',
+    'label_adminPanel' => 'Panel Pengelola',
     'label_manageCategories' => 'Kelola Kategori',
     'label_manageBooks' => 'Kelola Buku',
 

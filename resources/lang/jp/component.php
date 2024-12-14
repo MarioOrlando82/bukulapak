@@ -2,18 +2,18 @@
 
 return [
     // footer
-    'span_footer' => '2024 Bukulapak. All rights reserved.',
+    'span_footer' => '2024 Bukulapak. 全著作権所有。',
     
     // navbar
-    'welcome_user' => 'Welcome,',
-    'welcome_guest' => 'Welcome, Guest!',
-    'span_adminPanel' => 'Admin Panel',
-    'span_myBooks' => 'My Books',
-    'span_logout' => 'Logout',
-    'span_signin' => 'Sign In',
+    'welcome_user' => 'ようこそ、',
+    'welcome_guest' => 'ようこそ、ゲスト！',
+    'span_adminPanel' => '管理者パネル',
+    'span_myBooks' => 'マイ本',
+    'span_logout' => 'ログアウト',
+    'span_signin' => 'サインイン',
 
     // toaster
-    'toast_header' => 'Just now',
+    'toast_header' => 'たった今',
 ];
 
 ?>

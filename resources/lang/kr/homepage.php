@@ -1,27 +1,28 @@
 <?php
 
 return [
-    'hero_label1' => 'Reading Today for a',
-    'hero_label2' => 'Smarter Tomorrow!',
-    'btn_readNow' => 'Read Now',
-    'btn_search' => 'Search',
-    'search_holder' => 'Search Book',
+    'hero_label1' => '오늘 읽고 더 똑똑한 내일을 위해',
+    'hero_label2' => '더 똑똑한 내일을 위한 독서!',
+    'btn_readNow' => '지금 읽기',
+    'btn_search' => '검색',
+    'search_holder' => '책 검색',
 
-    'btn_filter' => 'Filter by Category',
-    'li_category1' => 'All Categories',
-    'li_category2' => 'Educational',
-    'li_category3' => 'Novel',
-    'li_category4' => 'Comic',
-    'li_category5' => 'Inspirational',
-    'li_category6' => 'Kid',
+    'btn_filter' => '카테고리별 필터링',
+    'li_category1' => '모든 카테고리',
+    'li_category2' => '교육',
+    'li_category3' => '소설',
+    'li_category4' => '만화',
+    'li_category5' => '영감을 주는',
+    'li_category6' => '어린이',
 
-    'btn_sort' => 'Sort by Price',
-    'li_sort1' => 'Lowest Price',
-    'li_sort2' => 'Highest Price',
-    'li_sort3' => 'All Prices',
+    'btn_sort' => '가격별 정렬',
+    'li_sort1' => '최저가',
+    'li_sort2' => '최고가',
+    'li_sort3' => '모든 가격',
 
-    'h3_searchNotFound' => 'No Matching Books Found',
-    'p_searchNotFound' => 'Try searching with different keywords',
+    'h3_searchNotFound' => '일치하는 책을 찾을 수 없습니다',
+    'p_searchNotFound' => '다른 키워드로 검색해 보세요',
+    'btn_detail' => '상세보기'
 ];
 
 ?>

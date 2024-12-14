@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="d-grid mt-3">
                                     <a href="{{ route('book.show', $book->id) }}"
-                                        class="btn btn-warning text-white btn-sm fw-semibold">Detail</a>
+                                        class="btn btn-warning text-white btn-sm fw-semibold">@lang('homepage.btn_detail')</a>
                                 </div>
                             </div>
                         </div>

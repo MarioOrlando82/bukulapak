@@ -22,6 +22,7 @@ return [
 
     'h3_searchNotFound' => 'No Matching Books Found',
     'p_searchNotFound' => 'Try searching with different keywords',
+    'btn_detail' => 'Detail'
 ];
 
 ?>

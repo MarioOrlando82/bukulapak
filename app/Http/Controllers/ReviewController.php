@@ -22,7 +22,7 @@ class ReviewController extends Controller
             'rating' => $request->rating,
         ]);
 
-        return redirect()->route('book.show', $book)->with('success', 'Review added successfully!');
+        return redirect()->route('book.show', $book)->with('success', __('messages.review_createSuccess'));
     }
 
     public function edit(Review $review)
@@ -30,7 +30,7 @@ class ReviewController extends Controller
         if (Auth::user()->id !== $review->user_id) {
             return redirect()
                 ->route('books.show', $review->book_id)
-                ->with('error', 'You are not authorized to edit this review.');
+                ->with('error', __('messages.review_editError'));
         }
 
         return view('reviews.edit', compact('review'));
@@ -41,7 +41,7 @@ class ReviewController extends Controller
         if (Auth::user()->id !== $review->user_id) {
             return redirect()
                 ->route('books.show', $review->book_id)
-                ->with('error', 'You are not authorized to update this review.');
+                ->with('error', __('messages.review_updateError'));
         }
 
         $request->validate([
@@ -56,20 +56,20 @@ class ReviewController extends Controller
 
         return redirect()
             ->route('book.show', $review->book_id)
-            ->with('success', 'Review updated successfully!');
+            ->with('success', __('messages.review_updateSuccess'));
     }
     public function destroy(Review $review)
     {
         if (Auth::user()->id !== $review->user_id) {
             return redirect()
                 ->route('books.show', $review->book_id)
-                ->with('error', 'You are not authorized to delete this review.');
+                ->with('error', __('messages.review_destroyError'));
         }
 
         $review->delete();
 
         return redirect()
             ->route('book.show', $review->book_id)
-            ->with('success', 'Review deleted successfully!');
+            ->with('success', __('messages.review_destroySuccess'));
     }
 }

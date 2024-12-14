@@ -1,27 +1,28 @@
 <?php
 
 return [
-    'hero_label1' => 'Reading Today for a',
-    'hero_label2' => 'Smarter Tomorrow!',
-    'btn_readNow' => 'Read Now',
-    'btn_search' => 'Search',
-    'search_holder' => 'Search Book',
+    'hero_label1' => '今日読むことで、',
+    'hero_label2' => 'より賢い明日を！',
+    'btn_readNow' => '今すぐ読む',
+    'btn_search' => '検索',
+    'search_holder' => '本を検索',
 
-    'btn_filter' => 'Filter by Category',
-    'li_category1' => 'All Categories',
-    'li_category2' => 'Educational',
-    'li_category3' => 'Novel',
-    'li_category4' => 'Comic',
-    'li_category5' => 'Inspirational',
-    'li_category6' => 'Kid',
+    'btn_filter' => 'カテゴリーで絞り込み',
+    'li_category1' => 'すべてのカテゴリー',
+    'li_category2' => '教育',
+    'li_category3' => '小説',
+    'li_category4' => 'マンガ',
+    'li_category5' => 'インスピレーション',
+    'li_category6' => '子供',
 
-    'btn_sort' => 'Sort by Price',
-    'li_sort1' => 'Lowest Price',
-    'li_sort2' => 'Highest Price',
-    'li_sort3' => 'All Prices',
+    'btn_sort' => '価格で並べ替え',
+    'li_sort1' => '最安値',
+    'li_sort2' => '最高価格',
+    'li_sort3' => 'すべての価格',
 
-    'h3_searchNotFound' => 'No Matching Books Found',
-    'p_searchNotFound' => 'Try searching with different keywords',
+    'h3_searchNotFound' => '一致する本は見つかりませんでした',
+    'p_searchNotFound' => '異なるキーワードで検索してみてください',
+    'btn_detail' => '詳細'
 ];
 
 ?>

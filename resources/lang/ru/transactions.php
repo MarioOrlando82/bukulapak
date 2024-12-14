@@ -1,16 +1,14 @@
 <?php
 
 return [
-    'lbl_by' => 'by',
-    'lbl_disclaimer' => '*The purchase of this book is for personal use only. Any reproduction, distribution, or
-                            public display of the book’s content without prior permission from the publisher or author is
-                            strictly prohibited.',
-    'lbl_cost' => 'COST SUMMARY',
-    'lbl_subtotal' => 'Subtotal',
-    'lbl_tax' => 'Estimated Tax',
-    'lbl_total' => 'Total',
-    'btn_pay' => 'Complete Payment',
-    'lbl_cancel' => 'Cancel',
+    'lbl_by' => 'от',
+    'lbl_disclaimer' => '*Покупка этой книги предназначена только для личного использования. Любое воспроизведение, распространение или публичное отображение содержания книги без предварительного разрешения издателя или автора строго запрещено.',
+    'lbl_cost' => 'СВОДКА О СТОИМОСТИ',
+    'lbl_subtotal' => 'Промежуточный итог',
+    'lbl_tax' => 'Предполагаемый налог',
+    'lbl_total' => 'Итого',
+    'btn_pay' => 'Завершить оплату',
+    'lbl_cancel' => 'Отмена',
 ];
 
 ?>

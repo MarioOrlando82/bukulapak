@@ -2,18 +2,18 @@
 
 return [
     // footer
-    'span_footer' => '2024 Bukulapak. All rights reserved.',
+    'span_footer' => '2024 Bukulapak. 모든 권리 보유.',
     
     // navbar
-    'welcome_user' => 'Welcome,',
-    'welcome_guest' => 'Welcome, Guest!',
-    'span_adminPanel' => 'Admin Panel',
-    'span_myBooks' => 'My Books',
-    'span_logout' => 'Logout',
-    'span_signin' => 'Sign In',
+    'welcome_user' => '환영합니다,',
+    'welcome_guest' => '안녕하세요, 게스트님!',
+    'span_adminPanel' => '관리자 패널',
+    'span_myBooks' => '내 도서',
+    'span_logout' => '로그아웃',
+    'span_signin' => '로그인',
 
     // toaster
-    'toast_header' => 'Just now',
+    'toast_header' => '방금',
 ];
 
 ?>

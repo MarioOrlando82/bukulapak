@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'lbl_bookTitle' => 'My Books',
-    'lbl_bookEmpty' => 'No Books Found in Your Collection',
-    'lbl_bookStart' => 'Try adding some books to get started!',
-    'lbl_bookDownload' => 'Download PDF',
+    'lbl_bookTitle' => '私の本',
+    'lbl_bookEmpty' => 'コレクションに本が見つかりません',
+    'lbl_bookStart' => '本を追加して始めましょう！',
+    'lbl_bookDownload' => 'PDFをダウンロード',
 ];
 
 ?>

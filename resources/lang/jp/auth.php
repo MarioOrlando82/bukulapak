@@ -2,31 +2,31 @@
 
 return [
     // login
-    'lbl_loginTitle' => 'Enter Your Account',
-    'lbl_register' => "Don't have an account?",
-    'link_register'=> 'Register Here',
+    'lbl_loginTitle' => 'アカウントにログイン',
+    'lbl_register' => 'アカウントをお持ちでないですか？',
+    'link_register'=> 'こちらから登録',
 
-    'lbl_email' => 'Email',
-    'lbl_emailReq' => 'Please enter a valid email.',
+    'lbl_email' => 'メールアドレス',
+    'lbl_emailReq' => '有効なメールアドレスを入力してください。',
 
-    'lbl_password' => 'Password',
-    'lbl_passwordReq' => 'Password is required.',
+    'lbl_password' => 'パスワード',
+    'lbl_passwordReq' => 'パスワードは必須です。',
 
-    'btn_login' => 'Login',
+    'btn_login' => 'ログイン',
 
     // register
-    'lbl_registerTitle' => 'Create New Account',
-    'lbl_login' => 'Already have an account?',
-    'link_login' => 'Login Here',
+    'lbl_registerTitle' => '新しいアカウントを作成',
+    'lbl_login' => 'すでにアカウントをお持ちですか？',
+    'link_login' => 'こちらからログイン',
 
-    'lbl_name' => 'Name',
-    'lbl_nameReq' => 'Name is required.',
+    'lbl_name' => '名前',
+    'lbl_nameReq' => '名前は必須です。',
 
-    'lbl_passwordShort' => 'Password must be at least 8 characters long.',
-    'lbl_passwordConfirm' => 'Confirm Password',
-    'lbl_passwordConfirmReq' => 'Passwords do not match.',
+    'lbl_passwordShort' => 'パスワードは8文字以上である必要があります。',
+    'lbl_passwordConfirm' => 'パスワード確認',
+    'lbl_passwordConfirmReq' => 'パスワードが一致しません。',
     
-    'btn_register' => 'Register',
+    'btn_register' => '登録',
 ];
 
 ?>

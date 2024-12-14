@@ -55,7 +55,7 @@ class TransactionController extends Controller
             ]);
         }
 
-        return redirect()->route('my-books.index')->with('success', 'Book added to your library!');
+        return redirect()->route('my-books.index')->with('success', __('messages.transaction_success'));
     }
 
     public function myBooks()

@@ -2,18 +2,18 @@
 
 return [
     // footer
-    'span_footer' => '2024 Bukulapak. All rights reserved.',
+    'span_footer' => '2024 Bukulapak. Все права защищены.',
     
     // navbar
-    'welcome_user' => 'Welcome,',
-    'welcome_guest' => 'Welcome, Guest!',
-    'span_adminPanel' => 'Admin Panel',
-    'span_myBooks' => 'My Books',
-    'span_logout' => 'Logout',
-    'span_signin' => 'Sign In',
+    'welcome_user' => 'Добро пожаловать,',
+    'welcome_guest' => 'Добро пожаловать, Гость!',
+    'span_adminPanel' => 'Админ-панель',
+    'span_myBooks' => 'Мои книги',
+    'span_logout' => 'Выйти',
+    'span_signin' => 'Войти',
 
     // toaster
-    'toast_header' => 'Just now',
+    'toast_header' => 'Только что',
 ];
 
 ?>
