@@ -3,7 +3,7 @@
 return [
     // login
     'lbl_loginTitle' => 'Enter Your Account',
-    'lbl_register' => "Don't have an account?",
+    'lbl_register' => "Don't have an account? ",
     'link_register'=> 'Register Here',
 
     'lbl_email' => 'Email',

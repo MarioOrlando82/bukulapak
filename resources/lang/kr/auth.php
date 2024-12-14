@@ -3,7 +3,7 @@
 return [
     // login
     'lbl_loginTitle' => '계정에 로그인',
-    'lbl_register' => '계정이 없으신가요?',
+    'lbl_register' => '계정이 없으신가요? ',
     'link_register'=> '여기에서 등록',
 
     'lbl_email' => '이메일',

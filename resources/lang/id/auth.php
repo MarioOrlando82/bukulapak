@@ -3,7 +3,7 @@
 return [
     // login
     'lbl_loginTitle' => 'Masuk ke Akun Anda',
-    'lbl_register' => 'Belum punya akun?',
+    'lbl_register' => 'Belum punya akun? ',
     'link_register'=> 'Daftar di sini',
 
     'lbl_email' => 'Email',

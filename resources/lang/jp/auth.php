@@ -3,7 +3,7 @@
 return [
     // login
     'lbl_loginTitle' => 'アカウントにログイン',
-    'lbl_register' => 'アカウントをお持ちでないですか？',
+    'lbl_register' => 'アカウントをお持ちでないですか？ ',
     'link_register'=> 'こちらから登録',
 
     'lbl_email' => 'メールアドレス',

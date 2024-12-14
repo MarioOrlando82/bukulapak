@@ -3,7 +3,7 @@
 return [
     // login
     'lbl_loginTitle' => 'Войдите в свой аккаунт',
-    'lbl_register' => 'Нет аккаунта?',
+    'lbl_register' => 'Нет аккаунта? ',
     'link_register'=> 'Зарегистрироваться здесь',
 
     'lbl_email' => 'Электронная почта',

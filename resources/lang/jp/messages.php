@@ -8,6 +8,7 @@ return [
     'book_createSuccess' => '本が正常に作成されました！',
     'book_updateSuccess' => '本が正常に更新されました。',
     'book_deleteSuccess' => '本が正常に削除されました。',
+    'reviewHolder' => 'ここにレビューを書いてください',
 
     // CategoryController
     'category_createSuccess' => 'カテゴリーが正常に作成されました。',
