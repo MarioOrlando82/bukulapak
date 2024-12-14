@@ -39,7 +39,7 @@
                                 <td>{{ $book->title }}</td>
                                 <td>{{ $book->author }}</td>
                                 <td>{{ $book->category->name }}</td>
-                                <td>${{ $book->price }}</td>
+                                <td>Rp{{ number_format($book->price, 0, ',', '.') }}</td>
                                 <td>
                                     <div class="d-flex justify-content-end gap-2">
                                         <a href="{{ route('books.edit', $book->id) }}" class="btn btn-sm btn-warning text-white"><svg
