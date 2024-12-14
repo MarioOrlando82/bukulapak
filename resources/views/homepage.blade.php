@@ -28,13 +28,13 @@
 
         <div class="row mt-2 mt-md-4 px-2 px-md-3">
             <div class="col-12">
-                <div class="d-flex flex-wrap justify-content-start gap-2">
+                <div class="d-flex flex-wrap justify-content-start gap-2 ms-auto">
                     <div class="dropdown">
                         <button class="btn btn-sm btn-outline-warning dropdown-toggle fw-semibold filter" type="button"
                             id="categoryFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             @lang('homepage.btn_filter')
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="categoryFilterDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="categoryFilterDropdown">
                             <li><a class="dropdown-item fw-semibold"
                                     href="{{ route('book.index', ['category' => 'all']) }}">@lang('homepage.li_category1')</a></li>
                             <li><a class="dropdown-item fw-semibold"
@@ -58,7 +58,7 @@
                             id="priceSortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             @lang('homepage.btn_sort')
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="priceSortDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="priceSortDropdown">
                             <li><a class="dropdown-item fw-semibold"
                                     href="{{ route('book.index', ['sort' => 'price_asc', 'category' => request('category')]) }}">@lang('homepage.li_sort1')
                                     </a></li>
@@ -70,7 +70,6 @@
                                     </a></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>

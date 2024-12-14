@@ -375,6 +375,9 @@ td:last-child {
     color: #f3c736;
 }
 
+.h-fit{
+    height: fit-content;
+}
 
 
 /* RESPONSIVE */

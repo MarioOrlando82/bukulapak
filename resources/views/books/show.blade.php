@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-4 mb-5">
         <div class="row">
-            <div class="col-md-4 d-grid">
+            <div class="col-md-4 d-grid h-fit">
                 <img src="data:image/jpeg;base64,{{ $book->cover_image }}" class="img-fluid" alt="{{ $book->title }}">
                 <a href="{{ route('transactions.create', $book->id) }}" class="btn btn-warning text-white mt-4"><span
                         class="fw-semibold">@lang('show.lbl_buy')</span>
