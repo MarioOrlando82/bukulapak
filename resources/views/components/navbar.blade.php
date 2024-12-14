@@ -8,31 +8,7 @@
         </div>
 
         <div class="d-flex align-items-center">
-            <div class="dropdown d-inline lang">
-                <button class="btn dropdown-toggle text-white" type="button" id="languageDropdown"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <span id="selectedLanguage" class="fw-semibold lang-text">English</span>
-                    <img src="https://flagcdn.com/20x15/gb.png" width="20" height="15">
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                    <li>
-                        <a class="dropdown-item" href="{{ route('locale.set', ['locale'=>'en']) }}">
-                        {{-- <a class="dropdown-item" href="?lang=en" data-lang="en"> --}}
-                            <span class="fw-semibold">English</span>
-                            <img src="https://flagcdn.com/20x15/gb.png" width="20" height="15"
-                                alt="United Kingdom">
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="{{ route('locale.set', ['locale'=>'id']) }}">
-                        {{-- <a class="dropdown-item" href="?lang=id" data-lang="id"> --}}
-                            <span class="fw-semibold">Bahasa Indonesia</span>
-                            <img src="https://flagcdn.com/20x15/id.png" width="20" height="15" alt="Indonesia">
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
+            @include('components.locale.localization')
 
             <div class="text-nowrap welcome">
                 @auth
