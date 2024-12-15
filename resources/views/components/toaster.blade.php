@@ -4,7 +4,7 @@
         style="background-color: {{ $type === 'success' ? '#199d45' : '#dc3545' }};">
             <div class="toast-header">
                 <strong class="me-auto">{{ ucfirst($type) }}</strong>
-                <small class="text-muted fw-semibold">Just now</small>
+                <small class="text-muted fw-semibold">@lang('component.toast_header')</small>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">

@@ -43,7 +43,7 @@ class BookController extends Controller
         $book->category_id = $request->category_id;
         $book->save();
 
-        return redirect()->route('books.index')->with('success', 'Book created successfully!');
+        return redirect()->route('books.index')->with('success', __('messages.book_createSuccess'));
     }
 
     public function edit(Book $book)
@@ -74,12 +74,12 @@ class BookController extends Controller
 
         $book->update($request->all());
 
-        return redirect()->route('books.index')->with('success', 'Book updated successfully.');
+        return redirect()->route('books.index')->with('success', __('messages.book_updateSuccess'));
     }
 
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
+        return redirect()->route('books.index')->with('success', __('messages.book_deleteSuccess'));
     }
 }

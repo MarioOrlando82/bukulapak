@@ -10,37 +10,33 @@
                     <div class="d-flex flex-column ms-2 justify-content-between">
                         <div>
                             <h2>{{ $book->title }}</h2>
-                            <p class="fw-semibold fs-6 fs-md-5 text-black-50">by {{ $book->author }}</p>
+                            <p class="fw-semibold fs-6 fs-md-5 text-black-50">@lang('transactions.lbl_by') {{ $book->author }}</p>
                             <p class="fw-semibold fs-5 fs-md-4 text-black">Rp{{ number_format($book->price, 0, ',', '.') }}</p>
                         </div>
                         <p class="text-danger fst-italic disclaimer">
-                            *The purchase of this book is for personal use only. Any reproduction, distribution, or
-                            public
-                            display of the book’s content without prior permission from the publisher or author is
-                            strictly
-                            prohibited.
+                            @lang('transactions.lbl_disclaimer')
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card p-4">
-                    <h6 class="fw-bold">COST SUMMARY</h6>
+                    <h6 class="fw-bold">@lang('transactions.lbl_cost')</h6>
                     <div class="d-flex justify-content-between fw-semibold">
-                        <span>Subtotal</span>
+                        <span>@lang('transactions.lbl_subtotal')</span>
                         <span>Rp{{ number_format($book->price, 0, ',', '.') }}</span>
                     </div>
                     <div class="d-flex justify-content-between fw-semibold">
-                        <span>Estimated Tax</span>
+                        <span>@lang('transactions.lbl_tax')</span>
                         <span>Rp0</span>
                     </div>
                     <hr>
                     <div class="d-flex justify-content-between fw-bold">
-                        <span>Total</span>
+                        <span>@lang('transactions.lbl_total')</span>
                         <span>Rp{{ number_format($book->price, 0, ',', '.') }}</span>
                     </div>
-                    <button type="submit" class="btn btn-warning my-3 fw-semibold text-white" id="pay-button">Complete Payment</button>
-                    <a href="{{ route('book.index') }}" class="btn btn-danger fw-semibold">Cancel</a>
+                    <button type="submit" class="btn btn-warning my-3 fw-semibold text-white" id="pay-button">@lang('transactions.btn_pay')</button>
+                    <a href="{{ route('book.index') }}" class="btn btn-danger fw-semibold">@lang('transactions.lbl_cancel')</a>
                 </div>
             </div>
         </div>

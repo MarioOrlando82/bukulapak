@@ -1,14 +1,14 @@
 @extends('master.master')
 @section('content')
     <div class="container mt-4 mb-5">
-        <h2 class="mb-4">Edit Book</h2>
+        <h2 class="mb-4">@lang('admin.label_editBook')</h2>
         <div class="card shadow-sm" style="background-color: #f9f9f9">
             <div class="card-body">
                 <form id="editBookForm" action="{{ route('books.update', $book->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="category_id" class="form-label">Category</label>
+                        <label for="category_id" class="form-label">@lang('admin.label_category')</label>
                         <select name="category_id" id="category_id" class="form-control custom-input fw-semibold form-input">
                             @foreach ($categories as $category)
                                 <option value="{{ $category->id }}" {{ $book->category_id == $category->id ? 'selected' : '' }} class="fw-semibold">
@@ -16,43 +16,43 @@
                                 </option>
                             @endforeach
                         </select>
-                        <div class="invalid-feedback">Please select a category.</div>
+                        <div class="invalid-feedback">@lang('admin.label_CategoryInvalid')</div>
                     </div> 
                     <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
+                        <label for="title" class="form-label">@lang('admin.label_title')</label>
                         <input type="text" name="title" id="title" class="form-control custom-input fw-semibold form-input" value="{{ $book->title }}">
-                        <div class="invalid-feedback">Title is required.</div>
+                        <div class="invalid-feedback">@lang('admin.label_titleInvalid')</div>
                     </div>
                     <div class="mb-3">
-                        <label for="author" class="form-label">Author</label>
+                        <label for="author" class="form-label">@lang('admin.label_author')</label>
                         <input type="text" name="author" id="author" class="form-control custom-input fw-semibold form-input" value="{{ $book->author }}">
-                        <div class="invalid-feedback">Author is required.</div>
+                        <div class="invalid-feedback">@lang('admin.label_authorInvalid')</div>
                     </div>
                     <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
+                        <label for="description" class="form-label">@lang('admin.label_description')</label>
                         <textarea name="description" id="description" class="form-control custom-input fw-semibold form-input" rows="5">{{ $book->description }}</textarea>
-                        <div class="invalid-feedback">Description is required.</div>
+                        <div class="invalid-feedback">@lang('admin.label_descriptionInvalid')</div>
                     </div>
                     <div class="mb-3">
-                        <label for="cover_image" class="form-label">Cover Image</label>
+                        <label for="cover_image" class="form-label">@lang('admin.label_image')</label>
                         <input type="file" name="cover_image" id="cover_image" class="form-control custom-input fw-semibold form-input">
-                        <small>Leave blank to keep the current image.</small>
-                        <div class="invalid-feedback">The file must be an image (jpg, png, jpeg, gif).</div>
+                        <small>@lang('admin.label_imageKeep')</small>
+                        <div class="invalid-feedback">@lang('admin.label_imageInvalid')</div>
                     </div>
                     <div class="mb-3">
-                        <label for="pdf_file" class="form-label">PDF File</label>
+                        <label for="pdf_file" class="form-label">@lang('admin.label_pdf')</label>
                         <input type="file" name="pdf_file" id="pdf_file" class="form-control custom-input fw-semibold form-input">
-                        <small>Leave blank to keep the current file.</small>
-                        <div class="invalid-feedback">The file must be a PDF and no larger than 10 MB.</div>
+                        <small>@lang('admin.label_pdfKeep')</small>
+                        <div class="invalid-feedback">@lang('admin.label_pdfInvalid')</div>
                     </div>
                     <div class="mb-3">
-                        <label for="price" class="form-label">Price</label>
+                        <label for="price" class="form-label">@lang('admin.label_price')</label>
                         <input type="number" name="price" id="price" class="form-control custom-input fw-semibold form-input" step="0.01"
                             value="{{ $book->price }}">
-                        <div class="invalid-feedback">Price is required and must be a valid number.</div>
+                        <div class="invalid-feedback">@lang('admin.label_priceInvalid')</div>
                     </div>
-                    <button type="submit" class="btn btn-warning fw-semibold mt-3 text-white">Update</button>
-                    <a href="{{ route('books.index') }}" class="btn btn-secondary fw-semibold mt-3 ms-3">Back</a>
+                    <button type="submit" class="btn btn-warning fw-semibold mt-3 text-white">@lang('admin.label_update')</button>
+                    <a href="{{ route('books.index') }}" class="btn btn-secondary fw-semibold mt-3 ms-3">@lang('admin.label_back')</a>
                 </form>
             </div>
         </div>

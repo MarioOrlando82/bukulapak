@@ -3,7 +3,15 @@
 @section('content')
     <div class="container mt-4 mb-5">
         <div class="books-top-section d-flex flex-column align-items-end">
-            <h2 class="text-center w-100 fs-2 mb-4 mt-2">Books</h2>
+            <a href="{{ url()->previous() }}"
+                class="btn btn-outline-warning d-flex align-items-center position-absolute start-0 ms-3 fw-semibold filter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                    <path d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"/>
+                  </svg>
+                @lang('admin.label_back')
+            </a>
+
+            <h2 class="text-center w-100 fs-2 mb-4 mt-2">@lang('admin.label_book')</h2>
             <a href="{{ route('books.create') }}" class="btn btn-warning mt-3 fw-semibold d-flex align-items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-plus-circle me-2" viewBox="0 0 16 16">
@@ -11,25 +19,25 @@
                     <path
                         d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
                 </svg>
-                Add Book
+                @lang('admin.label_addBook')
             </a>
         </div>
 
         @if ($books->isEmpty())
             <div class="alert alert-info text-center">
-                No books available. Please add a book.
+                @lang('admin.label_bookEmpty')
             </div>
         @else
             <div class="table-responsive">
                 <table class="table books-table align-top">
                     <thead>
                         <tr>
-                            <th class="text-center">ID</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th class="text-center">Actions</th>
+                            <th class="text-center">@lang('admin.label_id')</th>
+                            <th>@lang('admin.label_title')</th>
+                            <th>@lang('admin.label_author')</th>
+                            <th>@lang('admin.label_category')</th>
+                            <th>@lang('admin.label_price')</th>
+                            <th class="text-center">@lang('admin.label_actions')</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,7 +47,7 @@
                                 <td>{{ $book->title }}</td>
                                 <td>{{ $book->author }}</td>
                                 <td>{{ $book->category->name }}</td>
-                                <td>${{ $book->price }}</td>
+                                <td>Rp{{ number_format($book->price, 0, ',', '.') }}</td>
                                 <td>
                                     <div class="d-flex justify-content-end gap-2">
                                         <a href="{{ route('books.edit', $book->id) }}" class="btn btn-sm btn-warning text-white"><svg

@@ -361,6 +361,24 @@ td:last-child {
     font-size: 0.75em;
 }
 
+#clearButton {
+    right: 2.5rem;
+    display: none;
+    height: 100%;
+    border: none;
+    color: #6c757d;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+}
+#clearButton:hover {
+    color: #f3c736;
+}
+
+.h-fit{
+    height: fit-content;
+}
+
 
 /* RESPONSIVE */
 

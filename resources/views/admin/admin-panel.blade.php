@@ -2,14 +2,14 @@
 
 @section('content')
     <div class="container mt-4 mb-5">
-        <h2 class="fs-2 mb-4 mt-2">Admin Panel</h2>
+        <h2 class="fs-2 mb-4 mt-2">@lang('admin.label_adminPanel')</h2>
         <div class="row mt-5">
             <div class="col-md-6">
                 <a href="{{ route('categories.index') }}" class="text-decoration-none">
                     <div class="card card-categories position-relative">
                         <div class="card-body d-flex align-items-center position-relative" style="z-index: 2;">
                             <div class="left-content flex-grow-1">
-                                <h3 class="card-title text-white ms-3">Manage Categories</h3>
+                                <h3 class="card-title text-white ms-3">@lang('admin.label_manageCategories')</h3>
                             </div>
                         </div>
                         <svg class="card-svg position-absolute" width="300px" height="300px" viewBox="0 0 24 24"
@@ -37,7 +37,7 @@
                     <div class="card card-books position-relative">
                         <div class="card-body d-flex align-items-center position-relative" style="z-index: 2;">
                             <div class="left-content flex-grow-1">
-                                <h3 class="card-title text-white ms-3">Manage Books</h3>
+                                <h3 class="card-title text-white ms-3">@lang('admin.label_manageBooks')</h3>
                             </div>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" class="card2-svg position-absolute" width="300px"

@@ -3,23 +3,23 @@
 @section('content')
     <div class="container mt-4 mb-5">
         <div class="row">
-            <div class="col-md-4 d-grid">
+            <div class="col-md-4 d-grid h-fit">
                 <img src="data:image/jpeg;base64,{{ $book->cover_image }}" class="img-fluid" alt="{{ $book->title }}">
                 <a href="{{ route('transactions.create', $book->id) }}" class="btn btn-warning text-white mt-4"><span
-                        class="fw-semibold">Buy Now for</span>
+                        class="fw-semibold">@lang('show.lbl_buy')</span>
                     <strong>Rp{{ number_format($book->price, 0, ',', '.') }}</strong></a>
-                <a href="{{ route('book.index') }}" class="btn btn-secondary mt-3 fw-semibold">Back to Books</a>
+                <a href="{{ route('book.index') }}" class="btn btn-secondary mt-3 fw-semibold">@lang('show.lbl_back')</a>
             </div>
             <div class="col-md-8">
                 <h2 class="book-show-title">{{ $book->title }}</h2>
-                <p>by <span class="fw-semibold">{{ $book->author }}</span></p>
+                <p>@lang('show.lbl_by') <span class="fw-semibold">{{ $book->author }}</span></p>
                 <p class="fw-medium"><span
                         class="border border-warning py-1 px-2 rounded-pill">{{ $book->category->name }}</span></p>
                 <p class="fw-medium">{{ $book->description }}</p>
 
 
                 <div class="reviews mt-5">
-                    <h3>Reviews</h3>
+                    <h3>@lang('show.lbl_reviews')</h3>
 
                     @forelse($book->reviews as $review)
                         <div class="review position-relative mb-3">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                     @empty
-                        <p class="fw-semibold">No reviews yet. Be the first to review this book!</p>
+                        <p class="fw-semibold">@lang('show.lbl_reviewsEmpty')</p>
                     @endforelse
 
                 </div>
@@ -80,18 +80,18 @@
 
         <div class="reviews mt-4">
             @auth
-                <h4>Write a Review</h4>
+                <h4>@lang('show.lbl_reviewAdd')</h4>
                 <form action="{{ route('reviews.store', $book->id) }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <textarea name="content" class="form-control fw-semibold custom-input" placeholder="Write your review here..." required></textarea>
+                        <textarea name="content" class="form-control fw-semibold custom-input" placeholder="@lang('messages.reviewHolder')" required></textarea>
                     </div>
                     <div class="form-group mt-2">
-                        <label for="rating" class="fw-semibold">Rating (1-5)</label>
+                        <label for="rating" class="fw-semibold">@lang('show.lbl_reviewRating')</label>
                         <input type="number" name="rating" class="form-control fw-semibold custom-input" min="1" max="5"
                             required>
                     </div>
-                    <button type="submit" class="btn btn-warning mt-3 fw-semibold mb-5 text-white">Submit Review</button>
+                    <button type="submit" class="btn btn-warning mt-3 fw-semibold mb-5 text-white">@lang('show.btn_review')</button>
                 </form>
             @endauth
         </div>
