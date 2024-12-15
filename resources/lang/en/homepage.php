@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'hero_label1' => 'Reading Today for a',
+    'hero_label1' => 'Reading Today for a ',
     'hero_label2' => 'Smarter Tomorrow!',
     'btn_readNow' => 'Read Now',
     'btn_search' => 'Search',
