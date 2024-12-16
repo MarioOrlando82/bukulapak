@@ -84,7 +84,7 @@
                 <form action="{{ route('reviews.store', $book->id) }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <textarea name="content" class="form-control fw-semibold custom-input" placeholder="@lang('messages.reviewHolder')" required></textarea>
+                        <textarea name="content" class="form-control fw-semibold custom-input" placeholder="@lang('show.lbl_reviewHolder')" required></textarea>
                     </div>
                     <div class="form-group mt-2">
                         <label for="rating" class="fw-semibold">@lang('show.lbl_reviewRating')</label>

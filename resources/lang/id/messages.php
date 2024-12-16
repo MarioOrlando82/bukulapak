@@ -8,7 +8,6 @@ return [
     'book_createSuccess' => 'Buku berhasil dibuat!',
     'book_updateSuccess' => 'Buku berhasil diperbarui.',
     'book_deleteSuccess' => 'Buku berhasil dihapus.',
-    'reviewHolder' => 'Tulis ulasan anda disini...',
 
     // CategoryController
     'category_createSuccess' => 'Kategori berhasil dibuat.',
