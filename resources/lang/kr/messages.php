@@ -8,7 +8,6 @@ return [
     'book_createSuccess' => '책이 성공적으로 생성되었습니다!',
     'book_updateSuccess' => '책이 성공적으로 업데이트되었습니다.',
     'book_deleteSuccess' => '책이 성공적으로 삭제되었습니다.',
-    'reviewHolder' => '여기에 리뷰를 작성하세요',
 
     // CategoryController
     'category_createSuccess' => '카테고리가 성공적으로 생성되었습니다.',

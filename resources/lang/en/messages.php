@@ -8,7 +8,6 @@ return [
     'book_createSuccess' => 'Book created successfully!',
     'book_updateSuccess' => 'Book updated successfully.',
     'book_deleteSuccess' => 'Book deleted successfully.',
-    'reviewHolder' => 'Write your review here...',
 
     // CategoryController
     'category_createSuccess' => 'Category created successfully.',
