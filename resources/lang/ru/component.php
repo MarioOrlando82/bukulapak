@@ -14,6 +14,8 @@ return [
 
     // toaster
     'toast_header' => 'Только что',
+    'type_success' => 'Успех',
+    'type_failed' => 'неуспешный',
 ];
 
 ?>

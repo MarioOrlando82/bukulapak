@@ -14,6 +14,8 @@ return [
 
     // toaster
     'toast_header' => '방금',
+    'type_success' => '성공',
+    'type_failed' => '실패한',
 ];
 
 ?>

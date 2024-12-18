@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2 g-md-3 mt-3 mt-md-4 px-2 px-md-3">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-2 g-md-3 my-3 mt-md-4 px-2 px-md-3">
             @if ($books->isEmpty())
                 <div class="d-flex flex-column align-items-center justify-content-center text-center w-100">
                     <img src="{{ asset('assets/search_not_found.png') }}" class="img-fluid mb-2"

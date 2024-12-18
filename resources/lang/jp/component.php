@@ -14,6 +14,8 @@ return [
 
     // toaster
     'toast_header' => 'たった今',
+    'type_success' => '成功',
+    'type_failed' => '失敗した',
 ];
 
 ?>
