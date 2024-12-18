@@ -8,7 +8,6 @@ return [
     'book_createSuccess' => 'Книга успешно создана!',
     'book_updateSuccess' => 'Книга успешно обновлена.',
     'book_deleteSuccess' => 'Книга успешно удалена.',
-    'reviewHolder' => 'напишите свой отзыв здесь',
 
     // CategoryController
     'category_createSuccess' => 'Категория успешно создана.',
