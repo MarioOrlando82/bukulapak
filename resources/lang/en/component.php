@@ -14,6 +14,8 @@ return [
 
     // toaster
     'toast_header' => 'Just now',
+    'type_success' => 'Success',
+    'type_failed' => 'Failed',
 ];
 
 ?>

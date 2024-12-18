@@ -14,6 +14,8 @@ return [
 
     // toaster
     'toast_header' => 'Baru saja',
+    'type_success' => 'Sukses',
+    'type_failed' => 'Gagal',
 ];
 
 ?>
