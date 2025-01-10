@@ -17,12 +17,23 @@ class BookFactory extends Factory
      */
     public function definition(): array
     {
+        $images = [
+            'suntzu.jpg',
+            'compiler.jpg',
+            'harrypotter.jpg',
+            'percyjackson.jpg',
+        ];
+
+        $randomImage = $images[array_rand($images)];
+
+        $coverImage = base64_encode(file_get_contents(public_path('storage/cover_images/' . $randomImage)));
+
         return [
             'title' => $this->faker->sentence(3),
             'author' => $this->faker->name(),
             'category_id' => Category::all()->random()->id,
             'description' => $this->faker->paragraph(2),
-            'cover_image' => base64_encode(file_get_contents(public_path('storage/cover_images/suntzu.jpg'))),
+            'cover_image' => $coverImage,
             'pdf_file' => base64_encode(file_get_contents(public_path('storage/pdfs/suntzu.pdf'))),
             'price' => $this->faker->numberBetween(20000, 500000),
         ];
